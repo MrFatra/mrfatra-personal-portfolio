@@ -1,13 +1,18 @@
 import './App.css'
-import { VStack } from '@chakra-ui/react'
-import { Header } from './sections'
+import { Provider as ChakraProvider } from './components/ui/provider.tsx'
+import { BrowserRouter } from 'react-router-dom'
+import AppRoutes from './router'
+import { Navbar } from './components'
 
 function App() {
-
+  
   return (
-    <VStack>
-      <Header />
-    </VStack>
+    <ChakraProvider>
+      <BrowserRouter>
+        <Navbar />
+        <AppRoutes />
+      </BrowserRouter>
+    </ChakraProvider>
   )
 }
 

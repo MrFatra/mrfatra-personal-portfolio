@@ -1,1 +1,4 @@
-export { default as Header } from './header'
+export { default as Header } from './Header'
+export { default as About } from './About'
+export { default as Project } from './Project'
+export { default as Certificate } from './Certificate'
