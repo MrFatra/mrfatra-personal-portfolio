@@ -98,7 +98,7 @@ const CardProject = ({ title, image, description, tags, github }: CardProjectPro
               />
             </Box>
           </DialogBody>
-          <DialogCloseTrigger top="0" insetEnd="-10" bg="bg" />
+          <DialogCloseTrigger top="0" insetEnd="-10" bg={colorMode === 'dark' ? 'gray.900' : 'whiteAlpha.900'} />
         </DialogContent>
       </DialogRoot>
     </>
