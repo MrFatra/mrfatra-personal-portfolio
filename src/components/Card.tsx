@@ -3,7 +3,6 @@ import { BsArrowRight, BsGithub } from "react-icons/bs"
 import { useColorMode } from "./ui/color-mode"
 import { DialogBody, DialogCloseTrigger, DialogContent, DialogRoot, DialogTrigger } from "./ui/dialog"
 import { FaEye } from 'react-icons/fa6'
-import { useState } from "react"
 
 type CardProjectProps = {
   title: string
@@ -15,14 +14,6 @@ type CardProjectProps = {
 
 const CardProject = ({ title, image, description, tags, github }: CardProjectProps) => {
   const { colorMode } = useColorMode()
-  const [scale, setScale] = useState<number>(1);
-
-  const handleWheel = (e: React.WheelEvent) => {
-    e.preventDefault()
-    const zoomAmount = e.deltaY > 0 ? -0.1 : 0.1
-    setScale(prev => Math.min(Math.max(prev + zoomAmount, 1), 3))
-  }
-
 
   return (
     <>
@@ -39,7 +30,6 @@ const CardProject = ({ title, image, description, tags, github }: CardProjectPro
                   src={image}
                   alt={title}
                   _active={{ transform: 'scale(0.95)', transition: 'transform 0.3s' }}
-                  transform={`scale(${scale})`}
                 />
                 <Box
                   position="absolute"

@@ -1,4 +1,4 @@
-import { Box, Container, HStack, Text, Link as ChakraLink, Heading } from "@chakra-ui/react"
+import { Box, Container, HStack, Link as ChakraLink, Heading } from "@chakra-ui/react"
 import { Link as RouterLink } from "react-router-dom"
 import { useColorMode } from "./ui/color-mode"
 
