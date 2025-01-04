@@ -1,5 +1,5 @@
 import { ColorModeButton, useColorMode } from "@/components/ui/color-mode"
-import { About, Certificate, Header, Project } from "@/sections"
+import { About, Certificate, Header, Project, Skill } from "@/sections"
 import { Box, Container, Separator } from "@chakra-ui/react"
 
 const HomeContainer = () => {
@@ -12,6 +12,8 @@ const HomeContainer = () => {
             <Header />
             <Separator variant={"solid"} size={'lg'} />
             <About />
+            <Separator variant={"solid"} size={'lg'} />
+            <Skill />
             <Separator variant={"solid"} size={'lg'} />
             <Project />
             <Separator variant={"solid"} size={'lg'} />
