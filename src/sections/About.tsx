@@ -5,7 +5,7 @@ import { BiLinkExternal as LinkIcon } from 'react-icons/bi'
 const About = () => {
   const { colorMode } = useColorMode()
   return (
-    <Box display={'flex'} flexDirection={'column'} justifyContent={'center'} alignItems={'center'}>
+    <Box id='about' display={'flex'} flexDirection={'column'} justifyContent={'center'} alignItems={'center'}>
       <Box mb={5}>
         <Heading size={'3xl'}>About This Website</Heading>
       </Box>
