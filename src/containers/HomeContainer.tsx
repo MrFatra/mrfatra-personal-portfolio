@@ -6,7 +6,7 @@ import { useEffect, useState } from "react"
 import { FaDownload } from "react-icons/fa6"
 
 const HomeContainer = () => {
-    const { colorMode } = useColorMode()
+    const { colorMode, setColorMode } = useColorMode()
     const [showDownloadButton, setShowDownloadButton] = useState(false)
 
     useEffect(() => {
@@ -30,10 +30,10 @@ const HomeContainer = () => {
     return (
         <Container p={20} display={'flex'} flexDirection={'column'} gap={20} fluid>
             <Box position={'fixed'} top={20} right={3} display={'flex'} flexDirection={'column'} gap={3} zIndex={100}>
-                <Tooltip content='Toggle Theme' openDelay={200} closeDelay={200}>
-                    <Box asChild bg={colorMode === 'dark' ? 'whiteAlpha.300' : 'blackAlpha.300'} p={4} borderRadius={10} zIndex={100}>
-                        <ColorModeButton />
-                    </Box>
+                <Tooltip content='Toggle Dark Mode' openDelay={200} closeDelay={200}>
+                <Box asChild bg={colorMode === 'dark' ? 'whiteAlpha.300' : 'blackAlpha.300'} p={4} borderRadius={10} zIndex={100} onClick={() => setColorMode(colorMode === 'dark' ? 'light' : 'dark')}>
+                    <ColorModeButton />
+                </Box>
                 </Tooltip>
                 {
                     showDownloadButton &&
