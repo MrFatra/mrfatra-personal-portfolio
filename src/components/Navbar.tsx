@@ -34,6 +34,9 @@ const Navbar = () => {
             <RouterLink to={'#about'}>About</RouterLink>
           </ChakraLink>
           <ChakraLink asChild>
+            <RouterLink to={'#skills'}>Skills</RouterLink>
+          </ChakraLink>
+          <ChakraLink asChild>
             <RouterLink to={'#projects'}>Projects</RouterLink>
           </ChakraLink>
           <ChakraLink asChild>
