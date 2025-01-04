@@ -7,7 +7,7 @@ const About = () => {
   return (
     <Box id='about' display={'flex'} flexDirection={'column'} justifyContent={'center'} alignItems={'center'}>
       <Box mb={5}>
-        <Heading size={'3xl'}>About This Website</Heading>
+        <Heading size={'3xl'} fontWeight={'bold'}>About This Website</Heading>
       </Box>
       <Text mb={10}>
         This is my personal portfolio website. I built this website using:

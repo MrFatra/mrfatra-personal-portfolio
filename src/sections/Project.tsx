@@ -70,7 +70,7 @@ const Project = () => {
     return (
         <Box>
             <Box mb={5}>
-                <Heading size={'3xl'}>My Projects</Heading>
+                <Heading size={'3xl'} fontWeight={'bold'}>My Projects</Heading>
             </Box>
 
             <Box display={'flex'} flexWrap={'wrap'} justifyContent={'space-between'} gapY={5}>

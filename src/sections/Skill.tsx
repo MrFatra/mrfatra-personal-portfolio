@@ -1,6 +1,6 @@
 import { SkillCard } from "@/components"
 import { useColorMode } from "@/components/ui/color-mode"
-import { Box, Heading, Image } from "@chakra-ui/react"
+import { Box, Heading, Image, Text } from "@chakra-ui/react"
 import { SiChakraui, SiCss3, SiDart, SiExpress, SiFigma, SiFlutter, SiHtml5, SiJavascript, SiLaravel, SiMongodb, SiMysql, SiNextdotjs, SiNodedotjs, SiPhp, SiPostgresql, SiReact, SiShadcnui, SiTailwindcss } from "react-icons/si"
 
 const Skill = () => {
@@ -111,12 +111,16 @@ const Skill = () => {
     return (
         <Box display={'flex'} flexDirection={'column'} gap={5}>
             <Box mb={4}>
-                <Heading size={'3xl'}>My Skills</Heading>
+                <Heading size={'3xl'} fontWeight={'bold'}>My Skills</Heading>
+                <Text>Here are some of the technologies I have experience with.</Text>
             </Box>
 
             <Box display={'flex'} flexDirection={'column'} gap={20}>
                 <Box display={'flex'} flexDirection={'column'} gap={4}>
-                    <Heading size={'lg'} textAlign={'center'}>Fundamental</Heading>
+                    <Box textAlign={'center'}>
+                        <Heading size={'lg'}>Fundamental</Heading>
+                        <Text>These are the basic skills that I have mastered.</Text>
+                    </Box>
                     <Box display={'grid'} gridTemplateColumns={'repeat(auto-fill, minmax(200px, 1fr))'} gap={5}>
                         {
                             fundamental.map((skill, index) => (
@@ -126,9 +130,28 @@ const Skill = () => {
                     </Box>
                 </Box>
 
-                <Box display={'flex'} flexDirection={'column'} gap={4}>
-                    <Heading size={'lg'} textAlign={'center'}>Frontend</Heading>
-                    <Box display={'grid'} gridTemplateColumns={'repeat(auto-fill, minmax(200px, 1fr))'} gap={5}>
+                <Box display={'flex'} gap={4} alignItems={'center'}>
+                    <Box w={'50%'}>
+                        <Heading size={'lg'}>Frontend</Heading>
+                        <Text color={'gray.500'}>These are the frontend development technologies that I have mastered.</Text>
+                        <Text mt={5} fontSize={'sm'} color={'gray.500'}>Scroll to see more</Text>
+                    </Box>
+                    <Box
+                        w={'50%'}
+                        bg={colorMode === 'dark' ? 'gray.800' : 'gray.100'}
+                        borderRadius={10}
+                        p={5}
+                        display="grid"
+                        gridTemplateColumns="repeat(4, minmax(30%, 1fr))"
+                        overflowX={'auto'}
+                        gap={5}
+                        className="no-scrollbar"
+                        style={{
+                            WebkitOverflowScrolling: 'touch',
+                            scrollbarWidth: 'none',
+                            paddingBottom: '25px',
+                        }}
+                    >
                         {
                             frontend.map((skill, index) => (
                                 <SkillCard key={index} icon={skill.icon} title={skill.title} />
@@ -137,9 +160,28 @@ const Skill = () => {
                     </Box>
                 </Box>
 
-                <Box display={'flex'} flexDirection={'column'} gap={4}>
-                    <Heading size={'lg'} textAlign={'center'}>Backend</Heading>
-                    <Box display={'grid'} gridTemplateColumns={'repeat(auto-fill, minmax(200px, 1fr))'} gap={5}>
+                <Box display={'flex'} gap={4} alignItems={'center'}>
+                    <Box w={'50%'}>
+                        <Heading size={'lg'}>Backend</Heading>
+                        <Text color={'gray.500'}>These are the backend development technologies that I have mastered.</Text>
+                        <Text mt={5} fontSize={'sm'} color={'gray.500'}>Scroll to see more</Text>
+                    </Box>
+                    <Box
+                        w={'50%'}
+                        bg={colorMode === 'dark' ? 'gray.800' : 'gray.100'}
+                        borderRadius={10}
+                        p={5}
+                        display="grid"
+                        gridTemplateColumns="repeat(4, minmax(30%, 1fr))"
+                        overflowX={backend.length >= 4 ? 'auto' : 'hidden'}
+                        gap={5}
+                        className="no-scrollbar"
+                        style={{
+                            WebkitOverflowScrolling: 'touch',
+                            scrollbarWidth: 'none',
+                            paddingBottom: '25px',
+                        }}
+                    >
                         {
                             backend.map((skill, index) => (
                                 <SkillCard key={index} icon={skill.icon} title={skill.title} />
@@ -149,8 +191,22 @@ const Skill = () => {
                 </Box>
 
                 <Box display={'flex'} flexDirection={'column'} gap={4}>
-                    <Heading size={'lg'} textAlign={'center'}>Mobile</Heading>
-                    <Box display={'grid'} gridTemplateColumns={'repeat(auto-fill, minmax(200px, 1fr))'} gap={5}>
+                    <Box textAlign={'center'}>
+                        <Heading size={'lg'} textAlign={'center'}>Mobile</Heading>
+                        <Text>These are the mobile development technologies that I have mastered.</Text>
+                    </Box>
+                    <Box
+                        bg={colorMode === 'dark' ? 'gray.800' : 'gray.100'}
+                        borderRadius={10}
+                        p={5}
+                        display="grid"
+                        gridTemplateColumns="repeat(4, minmax(30%, 1fr))"
+                        gap={5}
+                        overflowX="auto"
+                        whiteSpace="nowrap"
+                        className="no-scrollbar"
+                        style={{ WebkitOverflowScrolling: 'touch', scrollbarWidth: 'none', paddingBottom: '25px' }}
+                    >
                         {
                             mobile.map((skill, index) => (
                                 <SkillCard key={index} icon={skill.icon} title={skill.title} />
@@ -160,8 +216,22 @@ const Skill = () => {
                 </Box>
 
                 <Box display={'flex'} flexDirection={'column'} gap={4}>
-                    <Heading size={'lg'} textAlign={'center'}>Database</Heading>
-                    <Box display={'grid'} gridTemplateColumns={'repeat(auto-fill, minmax(200px, 1fr))'} gap={5}>
+                    <Box textAlign={'center'}>
+                        <Heading size={'lg'} textAlign={'center'}>Database</Heading>
+                        <Text>These are the database technologies that I have mastered.</Text>
+                    </Box>
+                    <Box
+                        bg={colorMode === 'dark' ? 'gray.800' : 'gray.100'}
+                        borderRadius={10}
+                        p={5}
+                        display="grid"
+                        gridTemplateColumns="repeat(4, minmax(30%, 1fr))"
+                        gap={5}
+                        overflowX="auto"
+                        whiteSpace="nowrap"
+                        className="no-scrollbar"
+                        style={{ WebkitOverflowScrolling: 'touch', scrollbarWidth: 'none', paddingBottom: '25px' }}
+                    >
                         {
                             database.map((skill, index) => (
                                 <SkillCard key={index} icon={skill.icon} title={skill.title} />
@@ -171,8 +241,22 @@ const Skill = () => {
                 </Box>
 
                 <Box display={'flex'} flexDirection={'column'} gap={4}>
-                    <Heading size={'lg'} textAlign={'center'}>Other</Heading>
-                    <Box display={'grid'} gridTemplateColumns={'repeat(auto-fill, minmax(200px, 1fr))'} gap={5}>
+                    <Box textAlign={'center'}>
+                        <Heading size={'lg'} textAlign={'center'}>Other</Heading>
+                        <Text>These are the other technologies that I have mastered.</Text>
+                    </Box>
+                    <Box
+                        bg={colorMode === 'dark' ? 'gray.800' : 'gray.100'}
+                        borderRadius={10}
+                        p={5}
+                        display="grid"
+                        gridTemplateColumns="repeat(4, minmax(30%, 1fr))"
+                        gap={5}
+                        overflowX="auto"
+                        whiteSpace="nowrap"
+                        className="no-scrollbar"
+                        style={{ WebkitOverflowScrolling: 'touch', scrollbarWidth: 'none', paddingBottom: '25px' }}
+                    >
                         {
                             other.map((skill, index) => (
                                 <SkillCard key={index} icon={skill.icon} title={skill.title} />
@@ -183,7 +267,7 @@ const Skill = () => {
 
             </Box>
 
-        </Box>
+        </Box >
     )
 }
 

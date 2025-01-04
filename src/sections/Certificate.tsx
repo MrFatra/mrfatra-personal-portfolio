@@ -100,7 +100,7 @@ const Certificate = () => {
     return (
         <Box>
             <Box mb={5}>
-                <Heading size={'3xl'}>Awards & Certificates</Heading>
+                <Heading size={'3xl'} fontWeight={'bold'}>Awards & Certificates</Heading>
             </Box>
 
             <Box display={'flex'} flexWrap={'wrap'} justifyContent={'space-between'} gapY={5}>

@@ -29,10 +29,11 @@ const Header = () => {
                     <TypeAnimation
                         sequence={[
                             "Hi There! 👋",
-                            1000,
-                            "I'm Muhamad Ramadhan Fatra!",
+                            500,
+                            "Muhamad Ramadhan Fatra",
                             1000,
                         ]}
+                        deletionSpeed={50}
                         wrapper="span"
                         cursor={true}
                         style={{ display: 'inline-block', fontWeight: 'bold', marginBottom: 15 }}
