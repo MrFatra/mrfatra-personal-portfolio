@@ -4,21 +4,26 @@ import { useColorMode } from './ui/color-mode'
 type SkillCardProps = {
     icon: React.ReactNode
     title: string
+    color: string
 }
 
-const SkillCard = ({ icon, title }: SkillCardProps) => {
+const SkillCard = ({ icon, title, color }: SkillCardProps) => {
     const { colorMode } = useColorMode()
 
     return (
         <Box
-            display={'inline-flex'}
+            w={'30%'}
+            position={'relative'}
+            overflow={'hidden'}
+            flexDirection={'column'}
+            justifyContent={'center'}
+            display={'flex'}
+            flexShrink={0}
             alignItems={'center'}
             gap={3}
             borderRadius={10}
             p={3}
             bg={colorMode === 'dark' ? 'gray.800' : 'gray.100'}
-            border={'1px solid'}
-            borderColor={colorMode === 'dark' ? 'gray.700' : 'gray.500'}
             boxShadow={'md'}
             cursor={'pointer'}
             _hover={{ bg: colorMode === 'dark' ? 'gray.900' : 'gray.200' }}
@@ -30,9 +35,10 @@ const SkillCard = ({ icon, title }: SkillCardProps) => {
             <Box boxSize={10} bg={colorMode === 'dark' ? 'gray.500' : 'transparent'} borderRadius={8} display={'flex'} alignItems={'center'} justifyContent={'center'}>
                 {icon}
             </Box>
-            <Box fontWeight={'medium'}>
+            <Box fontWeight={'medium'} fontSize={'sm'}>
                 {title}
             </Box>
+            <Box w={'full'} h={1} bg={color} position={'absolute'} bottom={0} />
         </Box>
     )
 }

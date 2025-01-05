@@ -1,6 +1,7 @@
 import { SkillCard } from "@/components"
 import { useColorMode } from "@/components/ui/color-mode"
 import { Box, Heading, Image, Text } from "@chakra-ui/react"
+import { FiChevronsRight } from "react-icons/fi"
 import { SiChakraui, SiCss3, SiDart, SiExpress, SiFigma, SiFlutter, SiHtml5, SiJavascript, SiLaravel, SiMongodb, SiMysql, SiNextdotjs, SiNodedotjs, SiPhp, SiPostgresql, SiReact, SiShadcnui, SiTailwindcss } from "react-icons/si"
 
 const Skill = () => {
@@ -10,26 +11,32 @@ const Skill = () => {
         {
             icon: <Image src="https://upload.wikimedia.org/wikipedia/commons/3/38/HTML5_Badge.svg" width={7} height={7} fit={'contain'} />,
             title: "HTML",
+            color: 'orange.500'
         },
         {
             icon: <Image src="https://upload.wikimedia.org/wikipedia/commons/6/62/CSS3_logo.svg" width={7} height={7} fit={'contain'} />,
             title: "CSS",
+            color: 'blue.500'
         },
         {
             icon: <SiJavascript size={25} color="#f7df1d" style={{ backgroundColor: 'black' }} />,
             title: "JavaScript",
+            color: 'yellow.400'
         },
         {
             icon: <Image src="https://cdn.prod.website-files.com/62865614b39c464b76d339aa/66ba60017e4879e84bd4d83c_Node.svg" width={7} height={7} fit={'contain'} />,
             title: "Node.js",
+            color: 'green.500'
         },
         {
             icon: <Image src="https://upload.wikimedia.org/wikipedia/commons/9/91/Dart-logo-icon.svg" width={7} height={7} fit={'contain'} />,
             title: "Dart",
+            color: 'blue.500'
         },
         {
             icon: <Image src="https://upload.wikimedia.org/wikipedia/commons/2/27/PHP-logo.svg" width={7} height={7} fit={'contain'} />,
             title: "PHP",
+            color: 'purple.500'
         }
     ]
 
@@ -37,26 +44,32 @@ const Skill = () => {
         {
             icon: <SiReact size={25} color="#62dafc" />,
             title: "React.js",
+            color: '#62dafc'
         },
         {
             icon: <SiTailwindcss size={25} color="#00c6ff" />,
             title: "Tailwind CSS",
+            color: '#00c6ff'
         },
         {
             icon: <SiLaravel size={25} color="#ff2d20" />,
             title: "Laravel",
+            color: '#ff2d20'
         },
         {
             icon: <SiNextdotjs size={25} color={colorMode === 'dark' ? 'white' : 'black'} />,
             title: "Next.js",
+            color: colorMode === 'dark' ? 'white' : 'black'
         },
         {
             icon: <SiShadcnui size={25} color={colorMode === 'dark' ? 'white' : 'black'} />,
             title: "Shadcn UI",
+            color: colorMode === 'dark' ? 'white' : 'black'
         },
         {
             icon: <SiChakraui size={25} color="#31c2b5" />,
             title: "Chakra UI",
+            color: '#31c2b5'
         }
     ]
 
@@ -64,67 +77,95 @@ const Skill = () => {
         {
             icon: <SiExpress size={25} color={colorMode === 'dark' ? 'white' : 'black'} />,
             title: "Express.js",
+            color: colorMode === 'dark' ? 'white' : 'black'
         },
         {
             icon: <SiNextdotjs size={25} color={colorMode === 'dark' ? 'white' : 'black'} />,
             title: "Next.js",
+            color: colorMode === 'dark' ? 'white' : 'black'
         },
         {
             icon: <SiLaravel size={25} color="#ff2d20" />,
             title: "Laravel",
+            color: '#ff2d20'
         },
     ]
 
     const mobile = [
         {
             icon: <SiReact size={25} color="#62dafc" />,
-            title: "React Native"
+            title: "React Native",
+            color: '#62dafc'
         },
         {
             icon: <Image src="https://cdn-images-1.medium.com/v2/resize:fit:1200/1*5-aoK8IBmXve5whBQM90GA.png" width={7} height={7} fit={'contain'} />,
             title: "Flutter",
+            color: 'blue.500'
         },
     ]
 
     const database = [
         {
             icon: <Image src="https://upload.wikimedia.org/wikipedia/commons/b/b2/Database-mysql.svg" width={7} height={7} fit={'contain'} />,
-            title: "MySQL"
+            title: "MySQL",
+            color: 'orange.500'
         },
         {
             icon: <SiMongodb size={25} color="#18ac54" />,
             title: "MongoDB",
+            color: '#18ac54'
         },
         {
             icon: <Image src="https://upload.wikimedia.org/wikipedia/commons/2/29/Postgresql_elephant.svg" width={7} height={7} fit={'contain'} />,
             title: "PostgreSQL",
+            color: 'blue.500'
         },
     ]
 
     const other = [
         {
             icon: <Image src="https://upload.wikimedia.org/wikipedia/commons/3/33/Figma-logo.svg" width={7} height={7} fit={'contain'} />,
-            title: "Figma"
+            title: "Figma",
+            color: 'red.400'
         }
     ]
 
     return (
         <Box display={'flex'} flexDirection={'column'} gap={5}>
-            <Box mb={4}>
+            <Box mb={10} textAlign={'center'}>
                 <Heading size={'3xl'} fontWeight={'bold'}>My Skills</Heading>
                 <Text>Here are some of the technologies I have experience with.</Text>
             </Box>
 
             <Box display={'flex'} flexDirection={'column'} gap={20}>
-                <Box display={'flex'} flexDirection={'column'} gap={4}>
-                    <Box textAlign={'center'}>
+
+                <Box display={'flex'} gap={4} alignItems={'center'}>
+                    <Box w={'50%'}>
                         <Heading size={'lg'}>Fundamental</Heading>
-                        <Text>These are the basic skills that I have mastered.</Text>
+                        <Text color={'gray.500'}>These are the basic skills that i have mastered.</Text>
+                        <Box display={'flex'} mt={5} alignItems={'center'} gap={2}>
+                            <Text fontSize={'sm'} color={'gray.500'}>Scroll to see more</Text>
+                            <FiChevronsRight style={{ marginTop: '2px' }} color={colorMode === 'dark' ? 'white': 'black'} opacity={.5}/>
+                        </Box>
                     </Box>
-                    <Box display={'grid'} gridTemplateColumns={'repeat(auto-fill, minmax(200px, 1fr))'} gap={5}>
+                    <Box
+                        w={'1/2'}
+                        bg={colorMode === 'dark' ? 'gray.900' : 'gray.200'}
+                        borderRadius={10}
+                        p={5}
+                        display="flex"
+                        overflowX={'auto'}
+                        gap={5}
+                        className="no-scrollbar"
+                        style={{
+                            WebkitOverflowScrolling: 'touch',
+                            scrollbarWidth: 'none',
+                            paddingBottom: '25px',
+                        }}
+                    >
                         {
                             fundamental.map((skill, index) => (
-                                <SkillCard key={index} icon={skill.icon} title={skill.title} />
+                                <SkillCard key={index} icon={skill.icon} title={skill.title} color={skill.color} />
                             ))
                         }
                     </Box>
@@ -134,15 +175,17 @@ const Skill = () => {
                     <Box w={'50%'}>
                         <Heading size={'lg'}>Frontend</Heading>
                         <Text color={'gray.500'}>These are the frontend development technologies that I have mastered.</Text>
-                        <Text mt={5} fontSize={'sm'} color={'gray.500'}>Scroll to see more</Text>
+                        <Box display={'flex'} mt={5} alignItems={'center'} gap={2}>
+                            <Text fontSize={'sm'} color={'gray.500'}>Scroll to see more</Text>
+                            <FiChevronsRight style={{ marginTop: '2px' }} color={colorMode === 'dark' ? 'white': 'black'} opacity={.5}/>
+                        </Box>
                     </Box>
                     <Box
-                        w={'50%'}
-                        bg={colorMode === 'dark' ? 'gray.800' : 'gray.100'}
+                        w={'1/2'}
+                        bg={colorMode === 'dark' ? 'gray.900' : 'gray.200'}
                         borderRadius={10}
                         p={5}
-                        display="grid"
-                        gridTemplateColumns="repeat(4, minmax(30%, 1fr))"
+                        display="flex"
                         overflowX={'auto'}
                         gap={5}
                         className="no-scrollbar"
@@ -154,7 +197,7 @@ const Skill = () => {
                     >
                         {
                             frontend.map((skill, index) => (
-                                <SkillCard key={index} icon={skill.icon} title={skill.title} />
+                                <SkillCard key={index} icon={skill.icon} title={skill.title} color={skill.color} />
                             ))
                         }
                     </Box>
@@ -164,16 +207,18 @@ const Skill = () => {
                     <Box w={'50%'}>
                         <Heading size={'lg'}>Backend</Heading>
                         <Text color={'gray.500'}>These are the backend development technologies that I have mastered.</Text>
-                        <Text mt={5} fontSize={'sm'} color={'gray.500'}>Scroll to see more</Text>
+                        <Box display={'flex'} mt={5} alignItems={'center'} gap={2}>
+                            <Text fontSize={'sm'} color={'gray.500'}>Scroll to see more</Text>
+                            <FiChevronsRight style={{ marginTop: '2px' }} color={colorMode === 'dark' ? 'white': 'black'} opacity={.5}/>
+                        </Box>
                     </Box>
                     <Box
-                        w={'50%'}
-                        bg={colorMode === 'dark' ? 'gray.800' : 'gray.100'}
+                        w={'1/2'}
+                        bg={colorMode === 'dark' ? 'gray.900' : 'gray.200'}
                         borderRadius={10}
                         p={5}
-                        display="grid"
-                        gridTemplateColumns="repeat(4, minmax(30%, 1fr))"
-                        overflowX={backend.length >= 4 ? 'auto' : 'hidden'}
+                        display="flex"
+                        overflowX={'auto'}
                         gap={5}
                         className="no-scrollbar"
                         style={{
@@ -184,82 +229,103 @@ const Skill = () => {
                     >
                         {
                             backend.map((skill, index) => (
-                                <SkillCard key={index} icon={skill.icon} title={skill.title} />
+                                <SkillCard key={index} icon={skill.icon} title={skill.title} color={skill.color} />
                             ))
                         }
                     </Box>
                 </Box>
 
-                <Box display={'flex'} flexDirection={'column'} gap={4}>
-                    <Box textAlign={'center'}>
-                        <Heading size={'lg'} textAlign={'center'}>Mobile</Heading>
-                        <Text>These are the mobile development technologies that I have mastered.</Text>
+                <Box display={'flex'} gap={4} alignItems={'center'}>
+                    <Box w={'50%'}>
+                        <Heading size={'lg'}>Mobile</Heading>
+                        <Text color={'gray.500'}>These are the mobile development technologies that I have mastered.</Text>
+                        <Box display={'flex'} mt={5} alignItems={'center'} gap={2}>
+                            <Text fontSize={'sm'} color={'gray.500'}>Scroll to see more</Text>
+                            <FiChevronsRight style={{ marginTop: '2px' }} color={colorMode === 'dark' ? 'white': 'black'} opacity={.5}/>
+                        </Box>
                     </Box>
                     <Box
-                        bg={colorMode === 'dark' ? 'gray.800' : 'gray.100'}
+                        w={'1/2'}
+                        bg={colorMode === 'dark' ? 'gray.900' : 'gray.200'}
                         borderRadius={10}
                         p={5}
-                        display="grid"
-                        gridTemplateColumns="repeat(4, minmax(30%, 1fr))"
+                        display="flex"
+                        overflowX={'auto'}
                         gap={5}
-                        overflowX="auto"
-                        whiteSpace="nowrap"
                         className="no-scrollbar"
-                        style={{ WebkitOverflowScrolling: 'touch', scrollbarWidth: 'none', paddingBottom: '25px' }}
+                        style={{
+                            WebkitOverflowScrolling: 'touch',
+                            scrollbarWidth: 'none',
+                            paddingBottom: '25px',
+                        }}
                     >
                         {
                             mobile.map((skill, index) => (
-                                <SkillCard key={index} icon={skill.icon} title={skill.title} />
+                                <SkillCard key={index} icon={skill.icon} title={skill.title} color={skill.color} />
                             ))
                         }
                     </Box>
                 </Box>
 
-                <Box display={'flex'} flexDirection={'column'} gap={4}>
-                    <Box textAlign={'center'}>
-                        <Heading size={'lg'} textAlign={'center'}>Database</Heading>
-                        <Text>These are the database technologies that I have mastered.</Text>
+                <Box display={'flex'} gap={4} alignItems={'center'}>
+                    <Box w={'50%'}>
+                        <Heading size={'lg'}>Database</Heading>
+                        <Text color={'gray.500'}>These are the database technologies that I have mastered.</Text>
+                        <Box display={'flex'} mt={5} alignItems={'center'} gap={2}>
+                            <Text fontSize={'sm'} color={'gray.500'}>Scroll to see more</Text>
+                            <FiChevronsRight style={{ marginTop: '2px' }} color={colorMode === 'dark' ? 'white': 'black'} opacity={.5}/>
+                        </Box>
                     </Box>
                     <Box
-                        bg={colorMode === 'dark' ? 'gray.800' : 'gray.100'}
+                        w={'1/2'}
+                        bg={colorMode === 'dark' ? 'gray.900' : 'gray.200'}
                         borderRadius={10}
                         p={5}
-                        display="grid"
-                        gridTemplateColumns="repeat(4, minmax(30%, 1fr))"
+                        display="flex"
+                        overflowX={'auto'}
                         gap={5}
-                        overflowX="auto"
-                        whiteSpace="nowrap"
                         className="no-scrollbar"
-                        style={{ WebkitOverflowScrolling: 'touch', scrollbarWidth: 'none', paddingBottom: '25px' }}
+                        style={{
+                            WebkitOverflowScrolling: 'touch',
+                            scrollbarWidth: 'none',
+                            paddingBottom: '25px',
+                        }}
                     >
                         {
                             database.map((skill, index) => (
-                                <SkillCard key={index} icon={skill.icon} title={skill.title} />
+                                <SkillCard key={index} icon={skill.icon} title={skill.title} color={skill.color} />
                             ))
                         }
                     </Box>
                 </Box>
 
-                <Box display={'flex'} flexDirection={'column'} gap={4}>
-                    <Box textAlign={'center'}>
-                        <Heading size={'lg'} textAlign={'center'}>Other</Heading>
-                        <Text>These are the other technologies that I have mastered.</Text>
+                <Box display={'flex'} gap={4} alignItems={'center'}>
+                    <Box w={'50%'}>
+                        <Heading size={'lg'}>Other</Heading>
+                        <Text color={'gray.500'}>These are the other technologies that I have mastered.</Text>
+                        <Box display={'flex'} mt={5} alignItems={'center'} gap={2}>
+                            <Text fontSize={'sm'} color={'gray.500'}>Scroll to see more</Text>
+                            <FiChevronsRight style={{ marginTop: '2px' }} color={colorMode === 'dark' ? 'white': 'black'} opacity={.5}/>
+                        </Box>
                     </Box>
                     <Box
-                        bg={colorMode === 'dark' ? 'gray.800' : 'gray.100'}
+                        w={'1/2'}
+                        bg={colorMode === 'dark' ? 'gray.900' : 'gray.200'}
                         borderRadius={10}
                         p={5}
-                        display="grid"
-                        gridTemplateColumns="repeat(4, minmax(30%, 1fr))"
+                        display="flex"
+                        overflowX={'auto'}
                         gap={5}
-                        overflowX="auto"
-                        whiteSpace="nowrap"
                         className="no-scrollbar"
-                        style={{ WebkitOverflowScrolling: 'touch', scrollbarWidth: 'none', paddingBottom: '25px' }}
+                        style={{
+                            WebkitOverflowScrolling: 'touch',
+                            scrollbarWidth: 'none',
+                            paddingBottom: '25px',
+                        }}
                     >
                         {
                             other.map((skill, index) => (
-                                <SkillCard key={index} icon={skill.icon} title={skill.title} />
+                                <SkillCard key={index} icon={skill.icon} title={skill.title} color={skill.color} />
                             ))
                         }
                     </Box>
