@@ -98,7 +98,7 @@ const Certificate = () => {
     ]
 
     return (
-        <Box>
+        <Box id="certificate">
             <Box mb={5}>
                 <Heading size={'3xl'} fontWeight={'bold'}>Awards & Certificates</Heading>
             </Box>

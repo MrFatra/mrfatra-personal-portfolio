@@ -131,7 +131,7 @@ const Skill = () => {
     ]
 
     return (
-        <Box display={'flex'} flexDirection={'column'} gap={5}>
+        <Box id="skill" display={'flex'} flexDirection={'column'} gap={5}>
             <Box mb={10} textAlign={'center'}>
                 <Heading size={'3xl'} fontWeight={'bold'}>My Skills</Heading>
                 <Text>Here are some of the technologies I have experience with.</Text>

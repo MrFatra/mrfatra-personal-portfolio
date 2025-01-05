@@ -68,7 +68,7 @@ const Project = () => {
 
 
     return (
-        <Box>
+        <Box id="project">
             <Box mb={5}>
                 <Heading size={'3xl'} fontWeight={'bold'}>My Projects</Heading>
             </Box>

@@ -1,6 +1,6 @@
 import { ColorModeButton, useColorMode } from "@/components/ui/color-mode"
 import { Tooltip } from "@/components/ui/tooltip"
-import { About, Certificate, Contact, Footer, Header, Project, Skill } from "@/sections"
+import { About, Certificate, Contact, Header, Project, Skill } from "@/sections"
 import { Box, Container, Separator } from "@chakra-ui/react"
 import { useEffect, useState } from "react"
 import { FaDownload, FaArrowUp } from "react-icons/fa6"
@@ -92,7 +92,6 @@ const HomeContainer = () => {
             <Separator variant={"solid"} size={'lg'} />
             <Contact />
             <Separator variant={"solid"} size={'lg'} />
-            <Footer />
         </Container >
     )
 }

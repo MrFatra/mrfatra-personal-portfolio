@@ -6,7 +6,7 @@ import { BiDownload } from "react-icons/bi"
 const Header = () => {
 
     return (
-        <Box display={'flex'}>
+        <Box id="header" display={'flex'}>
             <Box
                 w={'80%'}
                 display={'flex'}
