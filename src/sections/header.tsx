@@ -1,9 +1,11 @@
 import { Button } from "@/components/ui/button"
-import { Box, Image, Text } from "@chakra-ui/react"
+import { Box, Image, Skeleton, Text } from "@chakra-ui/react"
 import { TypeAnimation } from "react-type-animation"
 import { BiDownload } from "react-icons/bi"
+import { useState } from "react"
 
 const Header = () => {
+    const [imageLoading, setImageLoading] = useState(true)
 
     return (
         <Box id="header" display={'flex'}>
@@ -13,14 +15,30 @@ const Header = () => {
                 justifyContent={'center'}
                 alignItems={'center'}
             >
-                <Image src="https://avatars.githubusercontent.com/u/80379524?v=4"
-                    h={200}
-                    display={'flex'}
-                    borderRadius={'full'}
-                    border={'5px solid'}
-                    alignItems={'center'}
-                    justifyContent={'center'}
-                />
+                <Skeleton
+                    asChild
+                    loading={imageLoading}
+                >
+                    <Box
+                        bg={'whiteAlpha.50'}
+                        h={200}
+                        w={200}
+                        borderRadius={'full'}
+                        border={'5px solid'}
+                        alignItems={'center'}
+                        justifyContent={'center'}
+                        display={'flex'}
+                        overflow={'hidden'}
+                    >
+                        <Image src="https://avatars.githubusercontent.com/u/80379524?v=4"
+                            loading='lazy'
+                            onLoad={() => setImageLoading(!imageLoading)}
+                            w={'full'}
+                            h={'full'}
+                            zIndex={'auto'}
+                        />
+                    </Box>
+                </Skeleton>
             </Box>
             <Box>
                 <Box
@@ -42,7 +60,7 @@ const Header = () => {
                 <Text fontSize={24} color={'gray.400'} mb={5} fontWeight={'medium'}>
                     Fullstack Developer
                 </Text>
-                <Text textStyle={{ base: 'base' }}>An enthusiastic and motivated Informatics Engineering graduate with a strong passion for web development. Skilled in developing websites using modern technologies such as Next.js and React.js. Supported by hands-on experience from an internship as a Frontend Developer and various web development projects.</Text>
+                <Text textStyle={{ base: 'base' }} textJustify={'inter-character'} textAlign={'justify'}>I am a passionate and dedicated Software/Web Programmer. With solid experience, I combine creativity to deliver valuable and impactful creations. I believe in the power of continuous learning and always stay up to date with technological advancements, constantly exploring new knowledge to deliver the best results in every project I work on.</Text>
                 <Box
                     as={Button}
                     mt={10}
@@ -54,7 +72,7 @@ const Header = () => {
                     <BiDownload />
                 </Box>
             </Box>
-        </Box>
+        </Box >
     )
 }
 

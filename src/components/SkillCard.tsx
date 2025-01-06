@@ -26,7 +26,7 @@ const SkillCard = ({ icon, title, color }: SkillCardProps) => {
             bg={colorMode === 'dark' ? 'gray.800' : 'gray.100'}
             boxShadow={'md'}
             cursor={'pointer'}
-            _hover={{ bg: colorMode === 'dark' ? 'gray.900' : 'gray.200' }}
+            _hover={{ bg: colorMode === 'dark' ? 'gray.900' : 'gray.200', transition: 'all 0.3s' }}
             _active={{
                 transform: 'scale(0.98)',
                 transition: 'transform 0.2s'

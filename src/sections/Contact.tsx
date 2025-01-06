@@ -22,8 +22,8 @@ const Contact = () => {
                             <Text>GitHub</Text>
                         </Link>
                     </Box>
-                    <Box bgGradient={'to-r'} gradientFrom={'red.500'} gradientTo={'pink.600'} p={3} borderRadius={10} display={'flex'} gap={2} alignItems={'center'} color={'white'} cursor={'pointer'}>
-                        <Link href="https://instagram.com/this._fatra" target="_blank" referrerPolicy="no-referrer">
+                    <Box bgGradient={'to-r'} gradientFrom={'red.500'} gradientTo={'pink.600'} p={3} borderRadius={10} display={'flex'} gap={2} alignItems={'center'} cursor={'pointer'}>
+                        <Link href="https://instagram.com/this._fatra" target="_blank" referrerPolicy="no-referrer" color={'white'}>
                             <FaInstagram />
                             <Text>Instagram</Text>
                         </Link>
@@ -45,6 +45,7 @@ const Contact = () => {
                     bg={colorMode === 'dark' ? 'gray.800' : 'gray.100'}
                     _hover={{
                         bg: colorMode === 'dark' ? 'gray.700' : 'gray.300',
+                        transition: 'all 0.3s'
                     }}>
                     <Link href={'mailto:fatraramadhann2004@gmail.com'} variant={'plain'}>
                         <Text fontWeight={'bold'} letterSpacing={.5}>Hire Me!</Text>

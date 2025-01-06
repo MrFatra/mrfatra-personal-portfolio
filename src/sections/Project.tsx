@@ -1,5 +1,5 @@
 import { Card } from "@/components"
-import { Box, Heading } from "@chakra-ui/react"
+import { Box, Heading, Text } from "@chakra-ui/react"
 
 const Project = () => {
 
@@ -71,6 +71,7 @@ const Project = () => {
         <Box id="project">
             <Box mb={5}>
                 <Heading size={'3xl'} fontWeight={'bold'}>My Projects</Heading>
+                <Text>Here are some of my projects that I have worked on.</Text>
             </Box>
 
             <Box display={'flex'} flexWrap={'wrap'} justifyContent={'space-between'} gapY={5}>
