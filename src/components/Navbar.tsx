@@ -1,9 +1,12 @@
 import { Box, Container, HStack, Link as ChakraLink, Heading } from "@chakra-ui/react"
 import { Link as RouterLink } from "react-router-dom"
 import { useColorMode } from "./ui/color-mode"
+import { useTranslation } from "react-i18next"
 
 const Navbar = () => {
+  const { t: translation } = useTranslation()
   const { colorMode } = useColorMode()
+
   return (
     <Container
       borderBottom={"2px solid"}
@@ -28,19 +31,19 @@ const Navbar = () => {
         </Box>
         <Box display="flex" gap={10}>
           <ChakraLink asChild>
-            <RouterLink to={'/'}>Home</RouterLink>
+            <RouterLink to={'/'}>{translation("Home")}</RouterLink>
           </ChakraLink>
           <ChakraLink asChild>
-            <RouterLink to={'#about'}>About</RouterLink>
+            <RouterLink to={'#about'}>{translation("About")}</RouterLink>
           </ChakraLink>
           <ChakraLink asChild>
-            <RouterLink to={'#skills'}>Skills</RouterLink>
+            <RouterLink to={'#skills'}>{translation("Skills")}</RouterLink>
           </ChakraLink>
           <ChakraLink asChild>
-            <RouterLink to={'#projects'}>Projects</RouterLink>
+            <RouterLink to={'#projects'}>{translation("Projects")}</RouterLink>
           </ChakraLink>
           <ChakraLink asChild>
-            <RouterLink to={'#certificates'}>Certificates</RouterLink>
+            <RouterLink to={'#certificates'}>{translation("Certificates")}</RouterLink>
           </ChakraLink>
         </Box>
       </HStack>

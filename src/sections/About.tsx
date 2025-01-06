@@ -1,15 +1,17 @@
 import { useColorMode } from '@/components/ui/color-mode'
 import { Box, Heading, Image, LinkBox, LinkOverlay, Text } from '@chakra-ui/react'
+import { useTranslation } from 'react-i18next'
 import { BiLinkExternal as LinkIcon } from 'react-icons/bi'
 
 const About = () => {
+  const { t: translate } = useTranslation()
   const { colorMode } = useColorMode()
   return (
     <Box id='about' display={'flex'} flexDirection={'column'} justifyContent={'center'} alignItems={'center'}>
       <Box mb={10} textAlign={'center'}>
-        <Heading size={'3xl'} fontWeight={'bold'}>About This Website</Heading>
+        <Heading size={'3xl'} fontWeight={'bold'}>{translate("About This Website")}</Heading>
         <Text>
-          This is my personal portfolio website. I built this website using:
+          {translate("This is my personal portfolio website. I built this website using:")}
         </Text>
       </Box>
 

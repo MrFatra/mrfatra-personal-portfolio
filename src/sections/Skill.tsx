@@ -1,10 +1,12 @@
 import { SkillCard } from "@/components"
 import { useColorMode } from "@/components/ui/color-mode"
 import { Box, Heading, Image, Text } from "@chakra-ui/react"
+import { useTranslation } from "react-i18next"
 import { FiChevronsRight } from "react-icons/fi"
-import { SiChakraui, SiCss3, SiDart, SiExpress, SiFigma, SiFlutter, SiHtml5, SiJavascript, SiLaravel, SiMongodb, SiMysql, SiNextdotjs, SiNodedotjs, SiPhp, SiPostgresql, SiReact, SiShadcnui, SiTailwindcss } from "react-icons/si"
+import { SiChakraui, SiDaisyui, SiExpress, SiJavascript, SiLaravel, SiMongodb, SiNextdotjs, SiReact, SiShadcnui, SiTailwindcss } from "react-icons/si"
 
 const Skill = () => {
+    const { t: translate } = useTranslation()
     const { colorMode } = useColorMode()
 
     const fundamental = [
@@ -70,6 +72,11 @@ const Skill = () => {
             icon: <SiChakraui size={25} color="#31c2b5" />,
             title: "Chakra UI",
             color: '#31c2b5'
+        },
+        {
+            icon: <Image src="https://img.daisyui.com/images/daisyui-logo/daisyui-logomark.svg" width={7} height={7} fit={'contain'} />,
+            title: "Daisy UI",
+            color: '#1ad1a5'
         }
     ]
 
@@ -133,8 +140,8 @@ const Skill = () => {
     return (
         <Box id="skill" display={'flex'} flexDirection={'column'} gap={5}>
             <Box mb={10} textAlign={'center'}>
-                <Heading size={'3xl'} fontWeight={'bold'}>My Skills</Heading>
-                <Text>Here are some of the technologies I have experience with.</Text>
+                <Heading size={'3xl'} fontWeight={'bold'}>{translate("My Skills")}</Heading>
+                <Text>{translate("Here are some of the technologies I have experience with.")}</Text>
             </Box>
 
             <Box display={'flex'} flexDirection={'column'} gap={20}>
@@ -142,10 +149,10 @@ const Skill = () => {
                 <Box display={'flex'} gap={4} alignItems={'center'}>
                     <Box w={'50%'}>
                         <Heading size={'lg'}>Fundamental</Heading>
-                        <Text color={'gray.500'}>These are the basic skills that i have mastered.</Text>
+                        <Text color={'gray.500'}>{translate("These are the basic skills that i have mastered.")}</Text>
                         <Box display={'flex'} mt={5} alignItems={'center'} gap={2}>
-                            <Text fontSize={'sm'} color={'gray.500'}>Scroll to see more</Text>
-                            <FiChevronsRight style={{ marginTop: '2px' }} color={colorMode === 'dark' ? 'white': 'black'} opacity={.5}/>
+                            <Text fontSize={'sm'} color={'gray.500'}>{translate("Scroll to see more")}</Text>
+                            <FiChevronsRight style={{ marginTop: '2px' }} color={colorMode === 'dark' ? 'white' : 'black'} opacity={.5} />
                         </Box>
                     </Box>
                     <Box
@@ -174,10 +181,10 @@ const Skill = () => {
                 <Box display={'flex'} gap={4} alignItems={'center'}>
                     <Box w={'50%'}>
                         <Heading size={'lg'}>Frontend</Heading>
-                        <Text color={'gray.500'}>These are the frontend development technologies that I have mastered.</Text>
+                        <Text color={'gray.500'}>{translate("These are the frontend development technologies that I have mastered.")}</Text>
                         <Box display={'flex'} mt={5} alignItems={'center'} gap={2}>
-                            <Text fontSize={'sm'} color={'gray.500'}>Scroll to see more</Text>
-                            <FiChevronsRight style={{ marginTop: '2px' }} color={colorMode === 'dark' ? 'white': 'black'} opacity={.5}/>
+                            <Text fontSize={'sm'} color={'gray.500'}>{translate("Scroll to see more")}</Text>
+                            <FiChevronsRight style={{ marginTop: '2px' }} color={colorMode === 'dark' ? 'white' : 'black'} opacity={.5} />
                         </Box>
                     </Box>
                     <Box
@@ -206,10 +213,10 @@ const Skill = () => {
                 <Box display={'flex'} gap={4} alignItems={'center'}>
                     <Box w={'50%'}>
                         <Heading size={'lg'}>Backend</Heading>
-                        <Text color={'gray.500'}>These are the backend development technologies that I have mastered.</Text>
+                        <Text color={'gray.500'}>{translate("These are the backend development technologies that I have mastered.")}</Text>
                         <Box display={'flex'} mt={5} alignItems={'center'} gap={2}>
-                            <Text fontSize={'sm'} color={'gray.500'}>Scroll to see more</Text>
-                            <FiChevronsRight style={{ marginTop: '2px' }} color={colorMode === 'dark' ? 'white': 'black'} opacity={.5}/>
+                            <Text fontSize={'sm'} color={'gray.500'}>{translate("Scroll to see more")}</Text>
+                            <FiChevronsRight style={{ marginTop: '2px' }} color={colorMode === 'dark' ? 'white' : 'black'} opacity={.5} />
                         </Box>
                     </Box>
                     <Box
@@ -238,10 +245,10 @@ const Skill = () => {
                 <Box display={'flex'} gap={4} alignItems={'center'}>
                     <Box w={'50%'}>
                         <Heading size={'lg'}>Mobile</Heading>
-                        <Text color={'gray.500'}>These are the mobile development technologies that I have mastered.</Text>
+                        <Text color={'gray.500'}>{translate("These are the mobile development technologies that I have mastered.")}</Text>
                         <Box display={'flex'} mt={5} alignItems={'center'} gap={2}>
-                            <Text fontSize={'sm'} color={'gray.500'}>Scroll to see more</Text>
-                            <FiChevronsRight style={{ marginTop: '2px' }} color={colorMode === 'dark' ? 'white': 'black'} opacity={.5}/>
+                            <Text fontSize={'sm'} color={'gray.500'}>{translate("Scroll to see more")}</Text>
+                            <FiChevronsRight style={{ marginTop: '2px' }} color={colorMode === 'dark' ? 'white' : 'black'} opacity={.5} />
                         </Box>
                     </Box>
                     <Box
@@ -270,10 +277,10 @@ const Skill = () => {
                 <Box display={'flex'} gap={4} alignItems={'center'}>
                     <Box w={'50%'}>
                         <Heading size={'lg'}>Database</Heading>
-                        <Text color={'gray.500'}>These are the database technologies that I have mastered.</Text>
+                        <Text color={'gray.500'}>{translate("These are the database technologies that I have mastered.")}</Text>
                         <Box display={'flex'} mt={5} alignItems={'center'} gap={2}>
-                            <Text fontSize={'sm'} color={'gray.500'}>Scroll to see more</Text>
-                            <FiChevronsRight style={{ marginTop: '2px' }} color={colorMode === 'dark' ? 'white': 'black'} opacity={.5}/>
+                            <Text fontSize={'sm'} color={'gray.500'}>{translate("Scroll to see more")}</Text>
+                            <FiChevronsRight style={{ marginTop: '2px' }} color={colorMode === 'dark' ? 'white' : 'black'} opacity={.5} />
                         </Box>
                     </Box>
                     <Box
@@ -301,11 +308,11 @@ const Skill = () => {
 
                 <Box display={'flex'} gap={4} alignItems={'center'}>
                     <Box w={'50%'}>
-                        <Heading size={'lg'}>Other</Heading>
-                        <Text color={'gray.500'}>These are the other technologies that I have mastered.</Text>
+                        <Heading size={'lg'}>{translate("Other")}</Heading>
+                        <Text color={'gray.500'}>{translate("These are the other technologies that I have mastered.")}</Text>
                         <Box display={'flex'} mt={5} alignItems={'center'} gap={2}>
-                            <Text fontSize={'sm'} color={'gray.500'}>Scroll to see more</Text>
-                            <FiChevronsRight style={{ marginTop: '2px' }} color={colorMode === 'dark' ? 'white': 'black'} opacity={.5}/>
+                            <Text fontSize={'sm'} color={'gray.500'}>{translate("Scroll to see more")}</Text>
+                            <FiChevronsRight style={{ marginTop: '2px' }} color={colorMode === 'dark' ? 'white' : 'black'} opacity={.5} />
                         </Box>
                     </Box>
                     <Box

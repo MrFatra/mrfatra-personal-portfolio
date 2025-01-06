@@ -32,7 +32,7 @@ const SkillCard = ({ icon, title, color }: SkillCardProps) => {
                 transition: 'transform 0.2s'
             }}
         >
-            <Box boxSize={10} bg={colorMode === 'dark' ? 'gray.500' : 'transparent'} borderRadius={8} display={'flex'} alignItems={'center'} justifyContent={'center'}>
+            <Box boxSize={10} borderRadius={8} display={'flex'} alignItems={'center'} justifyContent={'center'}>
                 {icon}
             </Box>
             <Box fontWeight={'medium'} fontSize={'sm'}>

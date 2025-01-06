@@ -1,9 +1,11 @@
+import { LanguageSwitcher } from "@/components"
 import { ColorModeButton, useColorMode } from "@/components/ui/color-mode"
 import { Tooltip } from "@/components/ui/tooltip"
 import { About, Certificate, Contact, Header, Project, Skill } from "@/sections"
-import { Box, Container, Separator } from "@chakra-ui/react"
+import { Box, Container, IconButton, Separator } from "@chakra-ui/react"
 import { useEffect, useState } from "react"
-import { FaDownload, FaArrowUp } from "react-icons/fa6"
+import { FaArrowUp } from "react-icons/fa6"
+import { MdDownload } from "react-icons/md"
 
 const HomeContainer = () => {
     const { colorMode, setColorMode } = useColorMode()
@@ -41,21 +43,40 @@ const HomeContainer = () => {
                         <ColorModeButton />
                     </Box>
                 </Tooltip>
+                <Tooltip content='Toggle Language' openDelay={200} closeDelay={200}>
+                    <Box asChild bg={colorMode === 'dark' ? 'whiteAlpha.300' : 'blackAlpha.300'} p={4} borderRadius={10} zIndex={100} position={'relative'}>
+                        <IconButton
+                            // onClick={toggleColorMode}
+                            variant="ghost"
+                            size="sm"
+                            css={{
+                                _icon: {
+                                    width: "5",
+                                    height: "5",
+                                },
+                            }}
+                        >
+                            <LanguageSwitcher />
+                        </IconButton>
+                    </Box>
+                </Tooltip>
                 {
                     showDownloadButton &&
                     <Tooltip content='Download CV' openDelay={200} closeDelay={200}>
-                        <Box
-                            bg={colorMode === 'dark' ? 'whiteAlpha.300' : 'blackAlpha.300'}
-                            p={4}
-                            borderRadius={10}
-                            zIndex={100}
-                            display={'flex'}
-                            justifyContent={'center'}
-                            alignItems={'center'}
-                            cursor={'pointer'}
-                        // onClick={() => window.open('/assets/cv.pdf', '_blank')}
-                        >
-                            <FaDownload />
+                        <Box asChild bg={colorMode === 'dark' ? 'whiteAlpha.300' : 'blackAlpha.300'} p={4} borderRadius={10} zIndex={100}>
+                            <IconButton
+                                variant="ghost"
+                                size="sm"
+                                css={{
+                                    _icon: {
+                                        width: "5",
+                                        height: "5",
+                                    },
+                                }}
+                            // onClick={() => window.open('/assets/cv.pdf', '_blank')}
+                            >
+                                <MdDownload />
+                            </IconButton>
                         </Box>
                     </Tooltip>
                 }

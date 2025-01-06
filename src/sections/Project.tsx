@@ -1,7 +1,9 @@
 import { Card } from "@/components"
 import { Box, Heading, Text } from "@chakra-ui/react"
+import { useTranslation } from "react-i18next"
 
 const Project = () => {
+    const { t: translate } = useTranslation()
 
     const projects = [
         {
@@ -23,7 +25,7 @@ const Project = () => {
         {
             title: "Chat App",
             image: "chat-app2.png",
-            description: "A minimalistic chat app built with MERN stack.",
+            description: translate("A minimalistic chat app built with MERN stack."),
             tags: [{
                 name: "MongoDB",
                 color: "green.700"
@@ -43,7 +45,7 @@ const Project = () => {
         {
             title: "Fine Search",
             image: "finesearch.png",
-            description: "Simple Semantic Search Engine built with Next JS, Drizzle, Vector Upstash, Neon Tech + Postgres.",
+            description: translate("Simple Semantic Search Engine built with Next JS, Drizzle, Vector Upstash, Neon Tech + Postgres."),
             tags: [{
                 name: "Next JS",
                 color: "black"
@@ -70,8 +72,8 @@ const Project = () => {
     return (
         <Box id="project">
             <Box mb={5}>
-                <Heading size={'3xl'} fontWeight={'bold'}>My Projects</Heading>
-                <Text>Here are some of my projects that I have worked on.</Text>
+                <Heading size={'3xl'} fontWeight={'bold'}>{translate("My Projects")}</Heading>
+                <Text>{translate("Here are some of my projects that I have worked on.")}</Text>
             </Box>
 
             <Box display={'flex'} flexWrap={'wrap'} justifyContent={'space-between'} gapY={5}>

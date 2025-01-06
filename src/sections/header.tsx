@@ -3,14 +3,16 @@ import { Box, Image, Skeleton, Text } from "@chakra-ui/react"
 import { TypeAnimation } from "react-type-animation"
 import { BiDownload } from "react-icons/bi"
 import { useState } from "react"
+import { useTranslation } from "react-i18next"
 
 const Header = () => {
+    const {t: translation} = useTranslation()
     const [imageLoading, setImageLoading] = useState(true)
 
     return (
         <Box id="header" display={'flex'}>
             <Box
-                w={'80%'}
+                w={'30%'}
                 display={'flex'}
                 justifyContent={'center'}
                 alignItems={'center'}
@@ -40,13 +42,15 @@ const Header = () => {
                     </Box>
                 </Skeleton>
             </Box>
-            <Box>
+            <Box
+            w={'70%'}
+            >
                 <Box
                     textStyle={{ base: 'lg', md: '2xl', lg: '4xl' }}
                 >
                     <TypeAnimation
                         sequence={[
-                            "Hi There! 👋",
+                            translation('Hi There! 👋'),
                             500,
                             "Muhamad Ramadhan Fatra",
                             1000,
@@ -60,7 +64,7 @@ const Header = () => {
                 <Text fontSize={24} color={'gray.400'} mb={5} fontWeight={'medium'}>
                     Fullstack Developer
                 </Text>
-                <Text textStyle={{ base: 'base' }} textJustify={'inter-character'} textAlign={'justify'}>I am a passionate and dedicated Software/Web Programmer. With solid experience, I combine creativity to deliver valuable and impactful creations. I believe in the power of continuous learning and always stay up to date with technological advancements, constantly exploring new knowledge to deliver the best results in every project I work on.</Text>
+                <Text textStyle={{ base: 'base' }}>{translation("Intro")}</Text>
                 <Box
                     as={Button}
                     mt={10}

@@ -1,13 +1,15 @@
 import { Card } from "@/components"
-import { Box, Heading } from "@chakra-ui/react"
+import { Box, Heading, Text } from "@chakra-ui/react"
+import { useTranslation } from "react-i18next"
 
 const Certificate = () => {
+    const { t: translate } = useTranslation()
 
-    const projects = [
+    const certificate = [
         {
             title: "Dart Beginner Course",
             image: "dart-beginner.jpg",
-            description: "Dart Beginner Course by Dicoding.",
+            description: translate("Dart Beginner Course by Dicoding."),
             tags: [{
                 name: "Dart",
                 color: "blue.600"
@@ -16,7 +18,7 @@ const Certificate = () => {
         {
             title: "Making Simple App with Flutter",
             image: "flutter-beginner.jpg",
-            description: "Making Simple App with Flutter by Dicoding.",
+            description: translate("Making Simple App with Flutter by Dicoding."),
             tags: [{
                 name: "Dart",
                 color: "blue.600"
@@ -29,7 +31,7 @@ const Certificate = () => {
         {
             title: "Javascript Course",
             image: "javascript.jpg",
-            description: "Javascript Course by Dicoding.",
+            description: translate("Javascript Course by Dicoding."),
             tags: [{
                 name: "Javascript",
                 color: "yellow.500"
@@ -38,7 +40,7 @@ const Certificate = () => {
         {
             title: "Analyze Speech and Language with Google API's",
             image: "gcp-ml-1.png",
-            description: "Analyze Speech and Language with Google API's by Google Cloud Platform (GCP).",
+            description: translate("Analyze Speech and Language with Google API's by Google Cloud Platform (GCP)."),
             tags: [{
                 name: "Google Cloud Platform",
                 color: "blue.500"
@@ -56,7 +58,7 @@ const Certificate = () => {
         {
             title: "Junior Web Developer",
             image: "jwd.jpg",
-            description: "Vocational School Graduate Academy (VSGA) Junior Web Developer Training by Kominfo.",
+            description: translate("Vocational School Graduate Academy (VSGA) Junior Web Developer Training by Kominfo."),
             tags: [{
                 name: "HTML",
                 color: "red.500"
@@ -81,7 +83,7 @@ const Certificate = () => {
         {
             title: "Web Design Competition 2024",
             image: "mrt_award.jpg",
-            description: "Web Design Competition Award Winning 2024 1st place.",
+            description: translate("Web Design Competition Award Winning 2024 1st place."),
             tags: [{
                 name: "HTML",
                 color: "red.500"
@@ -100,12 +102,13 @@ const Certificate = () => {
     return (
         <Box id="certificate">
             <Box mb={5}>
-                <Heading size={'3xl'} fontWeight={'bold'}>Awards & Certificates</Heading>
+                <Heading size={'3xl'} fontWeight={'bold'}>{translate("Awards & Certificates")}</Heading>
+                <Text>{translate("Here are some of my achievements and certificates.")}</Text>
             </Box>
 
             <Box display={'flex'} flexWrap={'wrap'} justifyContent={'space-between'} gapY={5}>
                 {
-                    projects.map((project, index) => (
+                    certificate.map((project, index) => (
                         <Card
                             key={index}
                             title={project.title}
