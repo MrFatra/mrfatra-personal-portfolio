@@ -3,7 +3,7 @@ import { useColorMode } from "@/components/ui/color-mode"
 import { Box, Heading, Image, Text } from "@chakra-ui/react"
 import { useTranslation } from "react-i18next"
 import { FiChevronsRight } from "react-icons/fi"
-import { SiChakraui, SiDaisyui, SiExpress, SiJavascript, SiLaravel, SiMongodb, SiNextdotjs, SiReact, SiShadcnui, SiTailwindcss } from "react-icons/si"
+import { SiChakraui, SiExpress, SiJavascript, SiLaravel, SiMongodb, SiNextdotjs, SiReact, SiShadcnui, SiTailwindcss } from "react-icons/si"
 
 const Skill = () => {
     const { t: translate } = useTranslation()

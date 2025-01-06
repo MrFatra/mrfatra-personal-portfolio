@@ -3,7 +3,7 @@ import HttpBackend from "i18next-http-backend";
 import LanguageDetector from "i18next-browser-languagedetector";
 import { initReactI18next } from "react-i18next";
 
-const apiKey = "k6J5_iIkNUkMywgpfgi8jg";
+const apiKey = import.meta.env.VITE_i18Nexus_KEY;
 const loadPath = `https://api.i18nexus.com/project_resources/translations/{{lng}}/{{ns}}.json?api_key=${apiKey}`;
 
 const userLanguage = navigator.language.split('-')[0];
