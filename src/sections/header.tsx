@@ -6,7 +6,7 @@ import { useState } from "react"
 import { useTranslation } from "react-i18next"
 
 const Header = () => {
-    const {t: translation} = useTranslation()
+    const { t: translation } = useTranslation()
     const [imageLoading, setImageLoading] = useState(true)
 
     return (
@@ -43,7 +43,7 @@ const Header = () => {
                 </Skeleton>
             </Box>
             <Box
-            w={'70%'}
+                w={'70%'}
             >
                 <Box
                     textStyle={{ base: 'lg', md: '2xl', lg: '4xl' }}
