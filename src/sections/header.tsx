@@ -4,6 +4,7 @@ import { TypeAnimation } from "react-type-animation"
 import { BiDownload } from "react-icons/bi"
 import { useState } from "react"
 import { useTranslation } from "react-i18next"
+import { AnimatedContent } from "@/blocks"
 
 const Header = () => {
     const { t: translation } = useTranslation()
@@ -65,15 +66,19 @@ const Header = () => {
                     Fullstack Developer
                 </Text>
                 <Text textStyle={{ base: 'base' }}>{translation("Intro")}</Text>
-                <Box
-                    as={Button}
-                    mt={10}
-                    display={'flex'}
-                    alignItems={'center'}
-                    gap={3}
-                >
-                    <Text>Download CV</Text>
-                    <BiDownload />
+                <Box display={'inline-flex'}>
+                    <AnimatedContent delay={500}>
+                        <Box
+                            as={Button}
+                            mt={10}
+                            display={'flex'}
+                            alignItems={'center'}
+                            gap={3}
+                        >
+                            <Text>Download CV</Text>
+                            <BiDownload />
+                        </Box>
+                    </AnimatedContent>
                 </Box>
             </Box>
         </Box >

@@ -1,3 +1,4 @@
+import { AnimatedContent } from "@/blocks"
 import { LanguageSwitcher } from "@/components"
 import { ColorModeButton, useColorMode } from "@/components/ui/color-mode"
 import { Tooltip } from "@/components/ui/tooltip"
@@ -62,23 +63,25 @@ const HomeContainer = () => {
                 </Tooltip>
                 {
                     showDownloadButton &&
-                    <Tooltip content='Download CV' openDelay={200} closeDelay={200}>
-                        <Box asChild bg={colorMode === 'dark' ? 'whiteAlpha.300' : 'blackAlpha.300'} p={4} borderRadius={10} zIndex={100}>
-                            <IconButton
-                                variant="ghost"
-                                size="sm"
-                                css={{
-                                    _icon: {
-                                        width: "5",
-                                        height: "5",
-                                    },
-                                }}
-                            // onClick={() => window.open('/assets/cv.pdf', '_blank')}
-                            >
-                                <MdDownload />
-                            </IconButton>
-                        </Box>
-                    </Tooltip>
+                    <AnimatedContent>
+                        <Tooltip content='Download CV' openDelay={200} closeDelay={200}>
+                            <Box asChild bg={colorMode === 'dark' ? 'whiteAlpha.300' : 'blackAlpha.300'} p={4} borderRadius={10} zIndex={100}>
+                                <IconButton
+                                    variant="ghost"
+                                    size="sm"
+                                    css={{
+                                        _icon: {
+                                            width: "5",
+                                            height: "5",
+                                        },
+                                    }}
+                                // onClick={() => window.open('/assets/cv.pdf', '_blank')}
+                                >
+                                    <MdDownload />
+                                </IconButton>
+                            </Box>
+                        </Tooltip>
+                    </AnimatedContent>
                 }
                 {
                     showScrollUpButton &&

@@ -1,3 +1,4 @@
+import { FadeContent, SplitText } from "@/blocks"
 import { Card } from "@/components"
 import { Box, Heading, Text } from "@chakra-ui/react"
 import { useTranslation } from "react-i18next"
@@ -72,8 +73,26 @@ const Project = () => {
     return (
         <Box id="project">
             <Box mb={5}>
-                <Heading size={'3xl'} fontWeight={'bold'}>{translate("My Projects")}</Heading>
-                <Text>{translate("Here are some of my projects that I have worked on.")}</Text>
+                <Heading size={'3xl'} fontWeight={'bold'}>
+                    <SplitText
+                        delay={50}
+                        animationFrom={{ opacity: 0, transform: 'translate3d(0,50px,0)' }}
+                        animationTo={{ opacity: 1, transform: 'translate3d(0,0,0)' }}
+                        easing="easeOutCubic"
+                        threshold={0.2}
+                        rootMargin="-50px"
+                        text={translate("My Projects")}
+                    />
+                </Heading>
+                <SplitText
+                    delay={0}
+                    animationFrom={{ opacity: 0, transform: 'translate3d(0,50px,0)' }}
+                    animationTo={{ opacity: 1, transform: 'translate3d(0,0,0)' }}
+                    easing="easeOutCubic"
+                    threshold={0.2}
+                    rootMargin="-50px"
+                    text={translate("Here are some of my projects that I have worked on.")}
+                />
             </Box>
 
             <Box display={'flex'} flexWrap={'wrap'} justifyContent={'space-between'} gapY={5}>
@@ -81,6 +100,7 @@ const Project = () => {
                     projects.map((project, index) => (
                         <Card
                             key={index}
+                            fade={{ delay: index * 200, isFade: true }}
                             title={project.title}
                             image={project.image}
                             description={project.description}

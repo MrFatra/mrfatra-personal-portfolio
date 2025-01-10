@@ -1,3 +1,4 @@
+import { FadeContent, ShinyText, SplitText } from "@/blocks"
 import { SkillCard } from "@/components"
 import { useColorMode } from "@/components/ui/color-mode"
 import { Box, Heading, Image, Text } from "@chakra-ui/react"
@@ -140,201 +141,277 @@ const Skill = () => {
     return (
         <Box id="skill" display={'flex'} flexDirection={'column'} gap={5}>
             <Box mb={10} textAlign={'center'}>
-                <Heading size={'3xl'} fontWeight={'bold'}>{translate("My Skills")}</Heading>
-                <Text>{translate("Here are some of the technologies I have experience with.")}</Text>
+                <Heading size={'3xl'} fontWeight={'bold'}>
+                    <SplitText
+                        delay={50}
+                        animationFrom={{ opacity: 0, transform: 'translate3d(0,50px,0)' }}
+                        animationTo={{ opacity: 1, transform: 'translate3d(0,0,0)' }}
+                        easing="easeOutCubic"
+                        threshold={0.2}
+                        rootMargin="-50px"
+                        text={translate("My Skills")}
+                    />
+                </Heading>
+                <SplitText
+                    delay={0}
+                    animationFrom={{ opacity: 0, transform: 'translate3d(0,50px,0)' }}
+                    animationTo={{ opacity: 1, transform: 'translate3d(0,0,0)' }}
+                    easing="easeOutCubic"
+                    threshold={0.2}
+                    rootMargin="-50px"
+                    text={translate("Here are some of the technologies I have experience with.")}
+                />
             </Box>
 
             <Box display={'flex'} flexDirection={'column'} gap={20}>
 
                 <Box display={'flex'} gap={4} alignItems={'center'}>
                     <Box w={'50%'}>
-                        <Heading size={'lg'}>Fundamental</Heading>
-                        <Text color={'gray.500'}>{translate("These are the basic skills that i have mastered.")}</Text>
+                        <FadeContent>
+                            <Heading size={'lg'}>Fundamental</Heading>
+                        </FadeContent>
+                        <ShinyText>
+                            <Text color={'gray.500'}>{translate("These are the basic skills that i have mastered.")}</Text>
+                        </ShinyText>
                         <Box display={'flex'} mt={5} alignItems={'center'} gap={2}>
                             <Text fontSize={'sm'} color={'gray.500'}>{translate("Scroll to see more")}</Text>
                             <FiChevronsRight style={{ marginTop: '2px' }} color={colorMode === 'dark' ? 'white' : 'black'} opacity={.5} />
                         </Box>
                     </Box>
                     <Box
-                        w={'1/2'}
-                        bg={colorMode === 'dark' ? 'gray.900' : 'gray.200'}
-                        borderRadius={10}
-                        p={5}
-                        display="flex"
-                        overflowX={'auto'}
-                        gap={5}
-                        className="no-scrollbar"
-                        style={{
-                            WebkitOverflowScrolling: 'touch',
-                            scrollbarWidth: 'none',
-                            paddingBottom: '25px',
-                        }}
-                    >
-                        {
-                            fundamental.map((skill, index) => (
-                                <SkillCard key={index} icon={skill.icon} title={skill.title} color={skill.color} />
-                            ))
-                        }
+                        w={'1/2'}>
+                        <FadeContent>
+                            <Box
+                                // w={'1/2'}
+                                bg={colorMode === 'dark' ? 'gray.900' : 'gray.200'}
+                                borderRadius={10}
+                                p={5}
+                                display="flex"
+                                overflowX={'auto'}
+                                gap={5}
+                                className="no-scrollbar"
+                                style={{
+                                    WebkitOverflowScrolling: 'touch',
+                                    scrollbarWidth: 'none',
+                                    paddingBottom: '25px',
+                                }}
+                            >
+
+                                {
+                                    fundamental.map((skill, index) => (
+                                        <SkillCard key={index} icon={skill.icon} title={skill.title} color={skill.color} />
+                                    ))
+                                }
+                            </Box>
+                        </FadeContent>
                     </Box>
                 </Box>
 
                 <Box display={'flex'} gap={4} alignItems={'center'}>
                     <Box w={'50%'}>
-                        <Heading size={'lg'}>Frontend</Heading>
-                        <Text color={'gray.500'}>{translate("These are the frontend development technologies that I have mastered.")}</Text>
+                        <FadeContent>
+                            <Heading size={'lg'}>
+                                Frontend
+                            </Heading>
+                        </FadeContent>
+                        <ShinyText>
+                            <Text color={'gray.500'}>{translate("These are the frontend development technologies that I have mastered.")}</Text>
+                        </ShinyText>
                         <Box display={'flex'} mt={5} alignItems={'center'} gap={2}>
                             <Text fontSize={'sm'} color={'gray.500'}>{translate("Scroll to see more")}</Text>
                             <FiChevronsRight style={{ marginTop: '2px' }} color={colorMode === 'dark' ? 'white' : 'black'} opacity={.5} />
                         </Box>
                     </Box>
                     <Box
-                        w={'1/2'}
-                        bg={colorMode === 'dark' ? 'gray.900' : 'gray.200'}
-                        borderRadius={10}
-                        p={5}
-                        display="flex"
-                        overflowX={'auto'}
-                        gap={5}
-                        className="no-scrollbar"
-                        style={{
-                            WebkitOverflowScrolling: 'touch',
-                            scrollbarWidth: 'none',
-                            paddingBottom: '25px',
-                        }}
-                    >
-                        {
-                            frontend.map((skill, index) => (
-                                <SkillCard key={index} icon={skill.icon} title={skill.title} color={skill.color} />
-                            ))
-                        }
+                        w={'1/2'}>
+                        <FadeContent>
+                            <Box
+                                // w={'1/2'}
+                                bg={colorMode === 'dark' ? 'gray.900' : 'gray.200'}
+                                borderRadius={10}
+                                p={5}
+                                display="flex"
+                                overflowX={'auto'}
+                                gap={5}
+                                className="no-scrollbar"
+                                style={{
+                                    WebkitOverflowScrolling: 'touch',
+                                    scrollbarWidth: 'none',
+                                    paddingBottom: '25px',
+                                }}
+                            >
+                                {
+                                    frontend.map((skill, index) => (
+                                        <SkillCard key={index} icon={skill.icon} title={skill.title} color={skill.color} />
+                                    ))
+                                }
+                            </Box>
+                        </FadeContent>
                     </Box>
                 </Box>
 
                 <Box display={'flex'} gap={4} alignItems={'center'}>
                     <Box w={'50%'}>
-                        <Heading size={'lg'}>Backend</Heading>
-                        <Text color={'gray.500'}>{translate("These are the backend development technologies that I have mastered.")}</Text>
+                        <FadeContent>
+                            <Heading size={'lg'}>Backend</Heading>
+                        </FadeContent>
+                        <ShinyText>
+                            <Text color={'gray.500'}>{translate("These are the backend development technologies that I have mastered.")}</Text>
+                        </ShinyText>
                         <Box display={'flex'} mt={5} alignItems={'center'} gap={2}>
                             <Text fontSize={'sm'} color={'gray.500'}>{translate("Scroll to see more")}</Text>
                             <FiChevronsRight style={{ marginTop: '2px' }} color={colorMode === 'dark' ? 'white' : 'black'} opacity={.5} />
                         </Box>
                     </Box>
                     <Box
-                        w={'1/2'}
-                        bg={colorMode === 'dark' ? 'gray.900' : 'gray.200'}
-                        borderRadius={10}
-                        p={5}
-                        display="flex"
-                        overflowX={'auto'}
-                        gap={5}
-                        className="no-scrollbar"
-                        style={{
-                            WebkitOverflowScrolling: 'touch',
-                            scrollbarWidth: 'none',
-                            paddingBottom: '25px',
-                        }}
-                    >
-                        {
-                            backend.map((skill, index) => (
-                                <SkillCard key={index} icon={skill.icon} title={skill.title} color={skill.color} />
-                            ))
-                        }
+                        w={'1/2'}>
+                        <FadeContent>
+                            <Box
+                                // w={'1/2'}
+                                bg={colorMode === 'dark' ? 'gray.900' : 'gray.200'}
+                                borderRadius={10}
+                                p={5}
+                                display="flex"
+                                overflowX={'auto'}
+                                gap={5}
+                                className="no-scrollbar"
+                                style={{
+                                    WebkitOverflowScrolling: 'touch',
+                                    scrollbarWidth: 'none',
+                                    paddingBottom: '25px',
+                                }}
+                            >
+                                {
+                                    backend.map((skill, index) => (
+                                        <SkillCard key={index} icon={skill.icon} title={skill.title} color={skill.color} />
+                                    ))
+                                }
+                            </Box>
+                        </FadeContent>
                     </Box>
                 </Box>
 
                 <Box display={'flex'} gap={4} alignItems={'center'}>
                     <Box w={'50%'}>
-                        <Heading size={'lg'}>Mobile</Heading>
-                        <Text color={'gray.500'}>{translate("These are the mobile development technologies that I have mastered.")}</Text>
+                        <FadeContent>
+                            <Heading size={'lg'}>Mobile</Heading>
+                        </FadeContent>
+                        <ShinyText>
+                            <Text color={'gray.500'}>{translate("These are the mobile development technologies that I have mastered.")}</Text>
+                        </ShinyText>
                         <Box display={'flex'} mt={5} alignItems={'center'} gap={2}>
                             <Text fontSize={'sm'} color={'gray.500'}>{translate("Scroll to see more")}</Text>
                             <FiChevronsRight style={{ marginTop: '2px' }} color={colorMode === 'dark' ? 'white' : 'black'} opacity={.5} />
                         </Box>
                     </Box>
                     <Box
-                        w={'1/2'}
-                        bg={colorMode === 'dark' ? 'gray.900' : 'gray.200'}
-                        borderRadius={10}
-                        p={5}
-                        display="flex"
-                        overflowX={'auto'}
-                        gap={5}
-                        className="no-scrollbar"
-                        style={{
-                            WebkitOverflowScrolling: 'touch',
-                            scrollbarWidth: 'none',
-                            paddingBottom: '25px',
-                        }}
-                    >
-                        {
-                            mobile.map((skill, index) => (
-                                <SkillCard key={index} icon={skill.icon} title={skill.title} color={skill.color} />
-                            ))
-                        }
+                        w={'1/2'}>
+                        <FadeContent>
+
+                            <Box
+                                // w={'1/2'}
+                                bg={colorMode === 'dark' ? 'gray.900' : 'gray.200'}
+                                borderRadius={10}
+                                p={5}
+                                display="flex"
+                                overflowX={'auto'}
+                                gap={5}
+                                className="no-scrollbar"
+                                style={{
+                                    WebkitOverflowScrolling: 'touch',
+                                    scrollbarWidth: 'none',
+                                    paddingBottom: '25px',
+                                }}
+                            >
+                                {
+                                    mobile.map((skill, index) => (
+                                        <SkillCard key={index} icon={skill.icon} title={skill.title} color={skill.color} />
+                                    ))
+                                }
+                            </Box>
+                        </FadeContent>
                     </Box>
                 </Box>
 
                 <Box display={'flex'} gap={4} alignItems={'center'}>
                     <Box w={'50%'}>
-                        <Heading size={'lg'}>Database</Heading>
-                        <Text color={'gray.500'}>{translate("These are the database technologies that I have mastered.")}</Text>
+                        <FadeContent>
+                            <Heading size={'lg'}>Database</Heading>
+                        </FadeContent>
+                        <ShinyText>
+                            <Text color={'gray.500'}>{translate("These are the database technologies that I have mastered.")}</Text>
+                        </ShinyText>
                         <Box display={'flex'} mt={5} alignItems={'center'} gap={2}>
                             <Text fontSize={'sm'} color={'gray.500'}>{translate("Scroll to see more")}</Text>
                             <FiChevronsRight style={{ marginTop: '2px' }} color={colorMode === 'dark' ? 'white' : 'black'} opacity={.5} />
                         </Box>
                     </Box>
                     <Box
-                        w={'1/2'}
-                        bg={colorMode === 'dark' ? 'gray.900' : 'gray.200'}
-                        borderRadius={10}
-                        p={5}
-                        display="flex"
-                        overflowX={'auto'}
-                        gap={5}
-                        className="no-scrollbar"
-                        style={{
-                            WebkitOverflowScrolling: 'touch',
-                            scrollbarWidth: 'none',
-                            paddingBottom: '25px',
-                        }}
-                    >
-                        {
-                            database.map((skill, index) => (
-                                <SkillCard key={index} icon={skill.icon} title={skill.title} color={skill.color} />
-                            ))
-                        }
+                        w={'1/2'}>
+                        <FadeContent>
+                            <Box
+                                // w={'1/2'}
+                                bg={colorMode === 'dark' ? 'gray.900' : 'gray.200'}
+                                borderRadius={10}
+                                p={5}
+                                display="flex"
+                                overflowX={'auto'}
+                                gap={5}
+                                className="no-scrollbar"
+                                style={{
+                                    WebkitOverflowScrolling: 'touch',
+                                    scrollbarWidth: 'none',
+                                    paddingBottom: '25px',
+                                }}
+                            >
+                                {
+                                    database.map((skill, index) => (
+                                        <SkillCard key={index} icon={skill.icon} title={skill.title} color={skill.color} />
+                                    ))
+                                }
+                            </Box>
+                        </FadeContent>
                     </Box>
                 </Box>
 
                 <Box display={'flex'} gap={4} alignItems={'center'}>
                     <Box w={'50%'}>
-                        <Heading size={'lg'}>{translate("Other")}</Heading>
-                        <Text color={'gray.500'}>{translate("These are the other technologies that I have mastered.")}</Text>
+                        <FadeContent>
+                            <Heading size={'lg'}>{translate("Other")}</Heading>
+                        </FadeContent>
+                        <ShinyText>
+                            <Text color={'gray.500'}>{translate("These are the other technologies that I have mastered.")}</Text>
+                        </ShinyText>
                         <Box display={'flex'} mt={5} alignItems={'center'} gap={2}>
                             <Text fontSize={'sm'} color={'gray.500'}>{translate("Scroll to see more")}</Text>
                             <FiChevronsRight style={{ marginTop: '2px' }} color={colorMode === 'dark' ? 'white' : 'black'} opacity={.5} />
                         </Box>
                     </Box>
                     <Box
-                        w={'1/2'}
-                        bg={colorMode === 'dark' ? 'gray.900' : 'gray.200'}
-                        borderRadius={10}
-                        p={5}
-                        display="flex"
-                        overflowX={'auto'}
-                        gap={5}
-                        className="no-scrollbar"
-                        style={{
-                            WebkitOverflowScrolling: 'touch',
-                            scrollbarWidth: 'none',
-                            paddingBottom: '25px',
-                        }}
-                    >
-                        {
-                            other.map((skill, index) => (
-                                <SkillCard key={index} icon={skill.icon} title={skill.title} color={skill.color} />
-                            ))
-                        }
+                        w={'1/2'}>
+                        <FadeContent>
+                            <Box
+                                // w={'1/2'}
+                                bg={colorMode === 'dark' ? 'gray.900' : 'gray.200'}
+                                borderRadius={10}
+                                p={5}
+                                display="flex"
+                                overflowX={'auto'}
+                                gap={5}
+                                className="no-scrollbar"
+                                style={{
+                                    WebkitOverflowScrolling: 'touch',
+                                    scrollbarWidth: 'none',
+                                    paddingBottom: '25px',
+                                }}
+                            >
+                                {
+                                    other.map((skill, index) => (
+                                        <SkillCard key={index} icon={skill.icon} title={skill.title} color={skill.color} />
+                                    ))
+                                }
+                            </Box>
+                        </FadeContent>
                     </Box>
                 </Box>
 

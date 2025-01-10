@@ -1,3 +1,4 @@
+import { SplitText } from "@/blocks"
 import { Card } from "@/components"
 import { Box, Heading, Text } from "@chakra-ui/react"
 import { useTranslation } from "react-i18next"
@@ -102,8 +103,28 @@ const Certificate = () => {
     return (
         <Box id="certificate">
             <Box mb={5}>
-                <Heading size={'3xl'} fontWeight={'bold'}>{translate("Awards & Certificates")}</Heading>
-                <Text>{translate("Here are some of my achievements and certificates.")}</Text>
+                <Heading size={'3xl'} fontWeight={'bold'}>
+                    <SplitText
+                        delay={50}
+                        animationFrom={{ opacity: 0, transform: 'translate3d(0,50px,0)' }}
+                        animationTo={{ opacity: 1, transform: 'translate3d(0,0,0)' }}
+                        easing="easeOutCubic"
+                        threshold={0.2}
+                        rootMargin="-50px"
+                        text={translate("Awards & Certificates")}
+                    >
+                    </SplitText>
+                </Heading>
+                <SplitText
+                    delay={0}
+                    animationFrom={{ opacity: 0, transform: 'translate3d(0,50px,0)' }}
+                    animationTo={{ opacity: 1, transform: 'translate3d(0,0,0)' }}
+                    easing="easeOutCubic"
+                    threshold={0.2}
+                    rootMargin="-50px"
+                    text={translate("Here are some of my achievements and certificates.")}
+                >
+                </SplitText>
             </Box>
 
             <Box display={'flex'} flexWrap={'wrap'} justifyContent={'space-between'} gapY={5}>
@@ -111,6 +132,7 @@ const Certificate = () => {
                     certificate.map((project, index) => (
                         <Card
                             key={index}
+                            fade={{ delay: index * 200, isFade: true }}
                             title={project.title}
                             image={project.image}
                             description={project.description}
