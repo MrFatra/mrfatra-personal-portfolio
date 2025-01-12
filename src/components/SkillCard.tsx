@@ -12,7 +12,7 @@ const SkillCard = ({ icon, title, color }: SkillCardProps) => {
 
     return (
         <Box
-            w={'30%'}
+            w={{ lg: '25%', md: '40%' }}
             position={'relative'}
             overflow={'hidden'}
             flexDirection={'column'}

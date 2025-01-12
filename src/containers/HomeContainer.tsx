@@ -85,25 +85,30 @@ const HomeContainer = () => {
                 }
                 {
                     showScrollUpButton &&
-                    <Tooltip content='Back to Top' openDelay={200} closeDelay={200}>
-                        <Box
-                            position={'fixed'}
-                            bottom={5}
-                            right={3}
-                            display={'flex'}
-                            alignItems={'center'}
-                            justifyContent={'center'}
-                            bg={colorMode === 'dark' ? 'whiteAlpha.300' : 'blackAlpha.300'}
-                            p={4}
-                            borderRadius={10}
-                            zIndex={100}
-                            cursor={'pointer'}
-                            onClick={() => window.scrollTo({ behavior: 'smooth', top: 0 })}>
-                            <FaArrowUp />
-                        </Box>
-                    </Tooltip>
+                    <Box
+                        position={'fixed'}
+                        bottom={5}
+                        right={3}
+                    >
+                        <AnimatedContent distance={20}>
+                            <Tooltip content='Back to Top' openDelay={200} closeDelay={200}>
+                                <Box
+                                    display={'flex'}
+                                    alignItems={'center'}
+                                    justifyContent={'center'}
+                                    bg={colorMode === 'dark' ? 'whiteAlpha.300' : 'blackAlpha.300'}
+                                    p={4}
+                                    borderRadius={10}
+                                    zIndex={100}
+                                    cursor={'pointer'}
+                                    onClick={() => window.scrollTo({ behavior: 'smooth', top: 0 })}>
+                                    <FaArrowUp />
+                                </Box>
+                            </Tooltip>
+                        </AnimatedContent>
+                    </Box>
                 }
-            </Box>
+            </Box >
             <Header />
             <Separator variant={"solid"} size={'lg'} />
             <About />

@@ -8,7 +8,10 @@ export default defineConfig({
   resolve: {
     alias: {
       '@': path.resolve(__dirname, 'src'),
-    }
+    },
+  },
+  optimizeDeps: {
+    exclude: ['js-big-decimal']
   },
   plugins: [react(), tsconfigPaths()],
 })

@@ -2,3 +2,4 @@ export { default as SplitText } from '@/blocks/TextAnimations/SplitText/SplitTex
 export { default as ShinyText } from '@/blocks/TextAnimations/ShinyText/ShinyText'
 export { default as AnimatedContent } from '@/blocks/Animations/AnimatedContent/AnimatedContent'
 export { default as FadeContent } from '@/blocks/Animations/FadeContent/FadeContent'
+export { default as SpotlightCard } from '@/blocks/Components/SpotlightCard/SpotlightCard'

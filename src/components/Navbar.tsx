@@ -12,7 +12,7 @@ const Navbar = () => {
       borderBottom={"2px solid"}
       borderColor={colorMode === 'dark' ? "whiteAlpha.500" : "blackAlpha.500"}
       bg={colorMode === 'dark' ? "whiteAlpha.300" : "blackAlpha.300"}
-      backdropFilter="blur(2px)"
+      backdropFilter="blur(5px)"
       position="sticky"
       top={0}
       zIndex={100}

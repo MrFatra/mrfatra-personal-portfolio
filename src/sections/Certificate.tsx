@@ -1,12 +1,16 @@
 import { SplitText } from "@/blocks"
 import { Card } from "@/components"
-import { Box, Heading, Text } from "@chakra-ui/react"
+import { useColorMode } from "@/components/ui/color-mode"
+import { Box, Heading, HStack, Text } from "@chakra-ui/react"
 import { useTranslation } from "react-i18next"
+import { FiChevronsRight } from "react-icons/fi"
+import { Swiper, SwiperSlide } from "swiper/react"
 
 const Certificate = () => {
     const { t: translate } = useTranslation()
+    const { colorMode } = useColorMode()
 
-    const certificate = [
+    const certificates = [
         {
             title: "Dart Beginner Course",
             image: "dart-beginner.jpg",
@@ -102,45 +106,91 @@ const Certificate = () => {
 
     return (
         <Box id="certificate">
-            <Box mb={5}>
-                <Heading size={'3xl'} fontWeight={'bold'}>
+            <HStack justifyContent={'space-between'}>
+                <Box mb={5}>
+                    <Heading size={'3xl'} fontWeight={'bold'}>
+                        <SplitText
+                            delay={50}
+                            animationFrom={{ opacity: 0, transform: 'translate3d(0,50px,0)' }}
+                            animationTo={{ opacity: 1, transform: 'translate3d(0,0,0)' }}
+                            easing="easeOutCubic"
+                            threshold={0.2}
+                            rootMargin="-50px"
+                            text={translate("Awards & Certificates")}
+                        >
+                        </SplitText>
+                    </Heading>
                     <SplitText
-                        delay={50}
+                        delay={0}
                         animationFrom={{ opacity: 0, transform: 'translate3d(0,50px,0)' }}
                         animationTo={{ opacity: 1, transform: 'translate3d(0,0,0)' }}
                         easing="easeOutCubic"
                         threshold={0.2}
                         rootMargin="-50px"
-                        text={translate("Awards & Certificates")}
+                        text={translate("Here are some of my achievements and certificates.")}
                     >
                     </SplitText>
-                </Heading>
-                <SplitText
-                    delay={0}
-                    animationFrom={{ opacity: 0, transform: 'translate3d(0,50px,0)' }}
-                    animationTo={{ opacity: 1, transform: 'translate3d(0,0,0)' }}
-                    easing="easeOutCubic"
-                    threshold={0.2}
-                    rootMargin="-50px"
-                    text={translate("Here are some of my achievements and certificates.")}
-                >
-                </SplitText>
-            </Box>
+                </Box>
+                <Box display={'flex'} gap={2}>
+                    <Text fontSize={'sm'} color={'gray.500'}>{translate("Scroll to see more")}</Text>
+                    <FiChevronsRight style={{ marginTop: '2px' }} color={colorMode === 'dark' ? 'white' : 'black'} opacity={.5} />
+                </Box>
+            </HStack>
 
-            <Box display={'flex'} flexWrap={'wrap'} justifyContent={'space-between'} gapY={5}>
+
+            <Swiper
+                spaceBetween={10}
+                slidesPerView={1}
+                breakpoints={{
+                    0: {
+                        slidesPerView: 1,
+                        spaceBetween: 10,
+                    },
+                    320: {
+                        slidesPerView: 1,
+                        spaceBetween: 20
+                    },
+                    480: {
+                        slidesPerView: 2,
+                        spaceBetween: 10
+                    },
+                    520: {
+                        slidesPerView: 2,
+                        spaceBetween: 10,
+                    },
+                    640: {
+                        slidesPerView: 2,
+                        spaceBetween: 20,
+                    },
+                    768: {
+                        slidesPerView: 2,
+                        spaceBetween: 15,
+                    },
+                    1024: {
+                        slidesPerView: 3,
+                        spaceBetween: 15,
+                    },
+                }}
+                pagination={{ clickable: true }}
+                className="mySwiper"
+            >
                 {
-                    certificate.map((project, index) => (
-                        <Card
-                            key={index}
-                            fade={{ delay: index * 200, isFade: true }}
-                            title={project.title}
-                            image={project.image}
-                            description={project.description}
-                            tags={project.tags}
-                        />
-                    ))
+                    certificates.map((certificate, index) => {
+                        return (
+                            <SwiperSlide key={index}>
+                                <Card
+                                    fadeDelay={index * 200}
+                                    title={certificate.title}
+                                    image={certificate.image}
+                                    description={certificate.description}
+                                    tags={certificate.tags}
+                                />
+                            </SwiperSlide>
+                        )
+                    })
                 }
-            </Box>
+            </Swiper>
+
         </Box>
     )
 }

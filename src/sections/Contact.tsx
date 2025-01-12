@@ -18,7 +18,7 @@ const Contact = () => {
                             <Text>LinkedIn</Text>
                         </Link>
                     </Box>
-                    <Box asChild bg={'white'} p={3} borderRadius={10} display={'flex'} gap={2} alignItems={'center'} color={'black'} cursor={'pointer'}>
+                    <Box asChild bg={colorMode === 'dark' ? 'white' : 'black'} p={3} borderRadius={10} display={'flex'} gap={2} alignItems={'center'} color={colorMode === 'dark' ? 'black' : 'white'} cursor={'pointer'}>
                         <Link href="https://github.com/mrfatra" target="_blank" referrerPolicy="no-referrer">
                             <FaGithub />
                             <Text>GitHub</Text>

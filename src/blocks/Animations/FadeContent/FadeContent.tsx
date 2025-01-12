@@ -1,5 +1,4 @@
-import { Card } from '@/components';
-import { Box, CardRoot } from '@chakra-ui/react';
+import { Box } from '@chakra-ui/react';
 import { useRef, useEffect, useState } from 'react';
 
 type FadeContentProps = {
@@ -22,7 +21,7 @@ const FadeContent = ({
   initialOpacity = 0,
 }: FadeContentProps) => {
   const [inView, setInView] = useState(false);
-  const ref = useRef<any>();
+  const ref = useRef<any>(null);
 
   useEffect(() => {
     if (!ref.current) return;
@@ -30,7 +29,7 @@ const FadeContent = ({
     const observer = new IntersectionObserver(
       ([entry]) => {
         if (entry.isIntersecting) {
-          setTimeout(() => setInView(true), delay);
+          setInView(true);
           observer.unobserve(ref.current);
         }
       },
@@ -40,14 +39,14 @@ const FadeContent = ({
     observer.observe(ref.current);
 
     return () => observer.disconnect();
-  }, [threshold, delay]);
+  }, [threshold]);
 
   return (
     <Box
       ref={ref}
       style={{
         opacity: inView ? 1 : initialOpacity,
-        transition: `opacity ${duration}ms ${easing} ${delay}ms, filter ${duration}ms ${easing} ${delay}ms`,
+        transition: `opacity ${duration}ms ${easing} ${delay}ms, filter ${duration}ms ${easing}`,
         filter: blur ? (inView ? 'blur(0px)' : 'blur(10px)') : 'none',
       }}
     >

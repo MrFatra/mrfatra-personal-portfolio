@@ -33,7 +33,7 @@ const About = () => {
       </Box>
 
       <Box flexDirection={'row'} display={'flex'} gap={10} mt={4} alignItems={'center'}>
-        <AnimatedContent>
+        <AnimatedContent repeat={false}>
           <LinkBox
             as={'article'}
             p={4}
@@ -67,7 +67,7 @@ const About = () => {
         <Box>
           <Text fontSize={24} fontWeight={'semibold'}>&</Text>
         </Box>
-        <AnimatedContent delay={500}>
+        <AnimatedContent repeat={false} delay={500}>
           <LinkBox
             as={'article'}
             p={4}

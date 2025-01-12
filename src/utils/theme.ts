@@ -13,12 +13,12 @@ const textStyles = defineTextStyles({
     },
     md: {
         value: {
-            fontSize: "18px",
+            fontSize: "14px",
         }
     },
     lg: {
         value: {
-            fontSize: "24px",
+            fontSize: "20px",
         }
     },
     xl: {
@@ -28,7 +28,7 @@ const textStyles = defineTextStyles({
     },
     "2xl": {
         value: {
-            fontSize: "28px",
+            fontSize: "32px",
         }
     },
 })

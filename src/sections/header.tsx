@@ -24,8 +24,8 @@ const Header = () => {
                 >
                     <Box
                         bg={'whiteAlpha.50'}
-                        h={200}
-                        w={200}
+                        h={{ lg: 200, md: 150 }}
+                        w={{ lg: 200, md: 150 }}
                         borderRadius={'full'}
                         border={'5px solid'}
                         alignItems={'center'}
@@ -47,7 +47,8 @@ const Header = () => {
                 w={'70%'}
             >
                 <Box
-                    textStyle={{ base: 'lg', md: '2xl', lg: '4xl' }}
+                asChild
+                    textStyle={{ base: '2xl' }}
                 >
                     <TypeAnimation
                         sequence={[
@@ -62,10 +63,10 @@ const Header = () => {
                         style={{ display: 'inline-block', fontWeight: 'bold', marginBottom: 15 }}
                     />
                 </Box>
-                <Text fontSize={24} color={'gray.400'} mb={5} fontWeight={'medium'}>
+                <Text textStyle={{ base: 'lg', md: 'lg', lg: 'lg' }} color={'gray.400'} mb={5} fontWeight={'medium'}>
                     Fullstack Developer
                 </Text>
-                <Text textStyle={{ base: 'base' }}>{translation("Intro")}</Text>
+                <Text>{translation("Intro")}</Text>
                 <Box display={'inline-flex'}>
                     <AnimatedContent delay={500}>
                         <Box
