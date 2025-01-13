@@ -71,6 +71,7 @@ const Header = () => {
                     <AnimatedContent delay={500}>
                         <Box
                             as={Button}
+                            borderRadius={'md'}
                             mt={10}
                             display={'flex'}
                             alignItems={'center'}
