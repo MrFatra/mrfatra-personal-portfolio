@@ -63,7 +63,7 @@ const Header = () => {
                         style={{ display: 'inline-block', fontWeight: 'bold', marginBottom: 15 }}
                     />
                 </Box>
-                <Text textStyle={{ base: 'lg', md: 'lg', lg: 'lg' }} color={'gray.400'} mb={5} fontWeight={'medium'}>
+                <Text textStyle={{ base: 'lg', md: 'lg', lg: 'lg' }} color={'gray.400'} mb={5} fontWeight={'semibold'}>
                     Fullstack Developer
                 </Text>
                 <Text>{translation("Intro")}</Text>
