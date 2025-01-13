@@ -146,7 +146,6 @@ const Skill = () => {
                         delay={50}
                         animationFrom={{ opacity: 0, transform: 'translate3d(0,50px,0)' }}
                         animationTo={{ opacity: 1, transform: 'translate3d(0,0,0)' }}
-                        easing="easeOutCubic"
                         threshold={0.2}
                         rootMargin="-50px"
                         text={translate("My Skills")}
@@ -156,7 +155,6 @@ const Skill = () => {
                     delay={0}
                     animationFrom={{ opacity: 0, transform: 'translate3d(0,50px,0)' }}
                     animationTo={{ opacity: 1, transform: 'translate3d(0,0,0)' }}
-                    easing="easeOutCubic"
                     threshold={0.2}
                     rootMargin="-50px"
                     text={translate("Here are some of the technologies I have experience with.")}
@@ -173,8 +171,8 @@ const Skill = () => {
                         <ShinyText>
                             <Text color={'gray.500'}>{translate("These are the basic skills that i have mastered.")}</Text>
                         </ShinyText>
-                        <Box display={'flex'} mt={5} alignItems={'center'} gap={2}>
-                            <Text fontSize={'sm'} color={'gray.500'}>{translate("Scroll to see more")}</Text>
+                        <Box as={ShinyText} display={'flex'} mt={5} alignItems={'center'} gap={2}>
+                            <Text fontSize={{ base: 'sm', md: 'xs' }} color={'gray.500'}>{translate("Scroll to see more")}</Text>
                             <FiChevronsRight style={{ marginTop: '2px' }} color={colorMode === 'dark' ? 'white' : 'black'} opacity={.5} />
                         </Box>
                     </Box>
@@ -217,8 +215,8 @@ const Skill = () => {
                         <ShinyText>
                             <Text color={'gray.500'}>{translate("These are the frontend development technologies that I have mastered.")}</Text>
                         </ShinyText>
-                        <Box display={'flex'} mt={5} alignItems={'center'} gap={2}>
-                            <Text fontSize={'sm'} color={'gray.500'}>{translate("Scroll to see more")}</Text>
+                        <Box as={ShinyText} display={'flex'} mt={5} alignItems={'center'} gap={2}>
+                            <Text fontSize={{ base: 'sm', md: 'xs' }} color={'gray.500'}>{translate("Scroll to see more")}</Text>
                             <FiChevronsRight style={{ marginTop: '2px' }} color={colorMode === 'dark' ? 'white' : 'black'} opacity={.5} />
                         </Box>
                     </Box>
@@ -258,8 +256,8 @@ const Skill = () => {
                         <ShinyText>
                             <Text color={'gray.500'}>{translate("These are the backend development technologies that I have mastered.")}</Text>
                         </ShinyText>
-                        <Box display={'flex'} mt={5} alignItems={'center'} gap={2}>
-                            <Text fontSize={'sm'} color={'gray.500'}>{translate("Scroll to see more")}</Text>
+                        <Box as={ShinyText} display={'flex'} mt={5} alignItems={'center'} gap={2}>
+                            <Text fontSize={{ base: 'sm', md: 'xs' }} color={'gray.500'}>{translate("Scroll to see more")}</Text>
                             <FiChevronsRight style={{ marginTop: '2px' }} color={colorMode === 'dark' ? 'white' : 'black'} opacity={.5} />
                         </Box>
                     </Box>
@@ -299,8 +297,8 @@ const Skill = () => {
                         <ShinyText>
                             <Text color={'gray.500'}>{translate("These are the mobile development technologies that I have mastered.")}</Text>
                         </ShinyText>
-                        <Box display={'flex'} mt={5} alignItems={'center'} gap={2}>
-                            <Text fontSize={'sm'} color={'gray.500'}>{translate("Scroll to see more")}</Text>
+                        <Box as={ShinyText} display={'flex'} mt={5} alignItems={'center'} gap={2}>
+                            <Text fontSize={{ base: 'sm', md: 'xs' }} color={'gray.500'}>{translate("Scroll to see more")}</Text>
                             <FiChevronsRight style={{ marginTop: '2px' }} color={colorMode === 'dark' ? 'white' : 'black'} opacity={.5} />
                         </Box>
                     </Box>
@@ -341,8 +339,8 @@ const Skill = () => {
                         <ShinyText>
                             <Text color={'gray.500'}>{translate("These are the database technologies that I have mastered.")}</Text>
                         </ShinyText>
-                        <Box display={'flex'} mt={5} alignItems={'center'} gap={2}>
-                            <Text fontSize={'sm'} color={'gray.500'}>{translate("Scroll to see more")}</Text>
+                        <Box as={ShinyText} display={'flex'} mt={5} alignItems={'center'} gap={2}>
+                            <Text fontSize={{ base: 'sm', md: 'xs' }} color={'gray.500'}>{translate("Scroll to see more")}</Text>
                             <FiChevronsRight style={{ marginTop: '2px' }} color={colorMode === 'dark' ? 'white' : 'black'} opacity={.5} />
                         </Box>
                     </Box>
@@ -382,8 +380,8 @@ const Skill = () => {
                         <ShinyText>
                             <Text color={'gray.500'}>{translate("These are the other technologies that I have mastered.")}</Text>
                         </ShinyText>
-                        <Box display={'flex'} mt={5} alignItems={'center'} gap={2}>
-                            <Text fontSize={'sm'} color={'gray.500'}>{translate("Scroll to see more")}</Text>
+                        <Box as={ShinyText} display={'flex'} mt={5} alignItems={'center'} gap={2}>
+                            <Text fontSize={{ base: 'sm', md: 'xs' }} color={'gray.500'}>{translate("Scroll to see more")}</Text>
                             <FiChevronsRight style={{ marginTop: '2px' }} color={colorMode === 'dark' ? 'white' : 'black'} opacity={.5} />
                         </Box>
                     </Box>

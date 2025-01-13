@@ -1,4 +1,5 @@
-import { useSprings, animated, SpringValue } from '@react-spring/web';
+import { useSprings, animated } from '@react-spring/web';
+import { easings } from '@react-spring/web';
 import { CSSProperties, useEffect, useRef, useState } from 'react';
 
 type SplitTextProps = {
@@ -7,11 +8,11 @@ type SplitTextProps = {
   delay?: number;
   animationFrom?: CSSProperties;
   animationTo?: CSSProperties;
-  easing?: string;
+  easing?: (t: number) => number;
   threshold?: number;
   rootMargin?: string;
   textAlign?: CSSProperties['textAlign'];
-  onLetterAnimationComplete?: () => void;
+  onWordAnimationComplete?: () => void;
 };
 
 const SplitText: React.FC<SplitTextProps> = ({
@@ -20,13 +21,13 @@ const SplitText: React.FC<SplitTextProps> = ({
   delay = 100,
   animationFrom = { opacity: 0, transform: 'translate3d(0,40px,0)' },
   animationTo = { opacity: 1, transform: 'translate3d(0,0,0)' },
-  easing = 'easeOutCubic',
+  easing = easings.easeOutCubic,
   threshold = 0.1,
   rootMargin = '-100px',
-  textAlign = 'center',
-  onLetterAnimationComplete = () => {},
+  textAlign = 'start',
+  onWordAnimationComplete = () => {},
 }) => {
-  const letters: any = text.split('');
+  const words = text.split(' '); // Split text into words
   const [inView, setInView] = useState(false);
   const ref = useRef<HTMLParagraphElement>(null);
   const animatedCount = useRef(0);
@@ -50,18 +51,18 @@ const SplitText: React.FC<SplitTextProps> = ({
   }, [threshold, rootMargin]);
 
   const springs = useSprings(
-    letters.length,
-    letters.map((_: any, i: number) => ({
+    words.length,
+    words.map((_, i) => ({
       from: animationFrom,
       to: async (next: (value: CSSProperties) => Promise<void>) => {
         if (inView) {
           await next(animationTo);
           animatedCount.current += 1;
           if (
-            animatedCount.current === letters.length &&
-            typeof onLetterAnimationComplete === 'function'
+            animatedCount.current === words.length &&
+            typeof onWordAnimationComplete === 'function'
           ) {
-            onLetterAnimationComplete();
+            onWordAnimationComplete();
           }
         }
       },
@@ -76,8 +77,9 @@ const SplitText: React.FC<SplitTextProps> = ({
       className={`split-parent ${className}`}
       style={{
         textAlign: textAlign,
-        display: 'inline',
+        display: 'inline-block',
         overflow: 'hidden',
+        whiteSpace: 'pre-wrap',
       }}
     >
       {springs.map((props, index) => (
@@ -87,9 +89,10 @@ const SplitText: React.FC<SplitTextProps> = ({
             ...props as any,
             display: 'inline-block',
             willChange: 'transform, opacity',
+            marginRight: '0.3em',
           }}
         >
-          {letters[index] === ' ' ? '\u00A0' : letters[index]}
+          {words[index]}
         </animated.span>
       ))}
     </p>

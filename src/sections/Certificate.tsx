@@ -1,4 +1,4 @@
-import { SplitText } from "@/blocks"
+import { ShinyText, SplitText } from "@/blocks"
 import { Card } from "@/components"
 import { useColorMode } from "@/components/ui/color-mode"
 import { Box, Heading, HStack, Text } from "@chakra-ui/react"
@@ -106,14 +106,13 @@ const Certificate = () => {
 
     return (
         <Box id="certificate">
-            <HStack justifyContent={'space-between'}>
-                <Box mb={5}>
+            <HStack justifyContent={'space-between'} alignItems={'end'}>
+                <Box mb={5} maxW={{ lg: 'full', md: '400px' }}>
                     <Heading size={'3xl'} fontWeight={'bold'}>
                         <SplitText
                             delay={50}
                             animationFrom={{ opacity: 0, transform: 'translate3d(0,50px,0)' }}
                             animationTo={{ opacity: 1, transform: 'translate3d(0,0,0)' }}
-                            easing="easeOutCubic"
                             threshold={0.2}
                             rootMargin="-50px"
                             text={translate("Awards & Certificates")}
@@ -124,17 +123,18 @@ const Certificate = () => {
                         delay={0}
                         animationFrom={{ opacity: 0, transform: 'translate3d(0,50px,0)' }}
                         animationTo={{ opacity: 1, transform: 'translate3d(0,0,0)' }}
-                        easing="easeOutCubic"
                         threshold={0.2}
                         rootMargin="-50px"
                         text={translate("Here are some of my achievements and certificates.")}
                     >
                     </SplitText>
                 </Box>
-                <Box display={'flex'} gap={2}>
-                    <Text fontSize={'sm'} color={'gray.500'}>{translate("Scroll to see more")}</Text>
-                    <FiChevronsRight style={{ marginTop: '2px' }} color={colorMode === 'dark' ? 'white' : 'black'} opacity={.5} />
-                </Box>
+                <ShinyText>
+                    <Box display={'flex'} gap={2} mb={5}>
+                        <Text fontSize={{ base: 'sm', md: 'xs' }} color={'gray.500'}>{translate("Scroll to see more")}</Text>
+                        <FiChevronsRight style={{ marginTop: '2px' }} color={colorMode === 'dark' ? 'white' : 'black'} opacity={.5} />
+                    </Box>
+                </ShinyText>
             </HStack>
 
 

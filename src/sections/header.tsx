@@ -11,7 +11,7 @@ const Header = () => {
     const [imageLoading, setImageLoading] = useState(true)
 
     return (
-        <Box id="header" display={'flex'}>
+        <Box id="header" display={'flex'} alignItems={'center'}>
             <Box
                 w={'30%'}
                 display={'flex'}
