@@ -106,7 +106,7 @@ const Project = () => {
             </HStack>
 
             <Swiper
-                spaceBetween={10}
+                spaceBetween={30}
                 slidesPerView={1}
                 breakpoints={{
                     0: {

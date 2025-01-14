@@ -5,6 +5,7 @@ import { Box, Heading, Image, Text } from "@chakra-ui/react"
 import { useTranslation } from "react-i18next"
 import { FiChevronsRight } from "react-icons/fi"
 import { SiChakraui, SiExpress, SiJavascript, SiLaravel, SiMongodb, SiNextdotjs, SiReact, SiShadcnui, SiTailwindcss } from "react-icons/si"
+import { Swiper, SwiperSlide } from "swiper/react"
 
 const Skill = () => {
     const { t: translate } = useTranslation()
@@ -177,10 +178,40 @@ const Skill = () => {
                         </Box>
                     </Box>
                     <Box
-                        w={'1/2'}>
+                        w={'1/2'}
+                        bg={colorMode === 'dark' ? 'gray.900' : 'gray.200'}
+                        borderRadius={10}
+                        p={5}
+                    >
                         <FadeContent>
-                            <Box
-                                // w={'1/2'}
+                            <Swiper
+                                spaceBetween={10}
+                                breakpoints={{
+                                    768: {
+                                        slidesPerView: 2,
+                                    },
+                                    1024: {
+                                        slidesPerView: 3,
+                                    },
+                                    1440: {
+                                        slidesPerView: 4,
+                                    }
+                                }}
+                            >
+                                {
+                                    fundamental.map((skill, index) => (
+                                        <SwiperSlide key={index} style={{ width: '120px' }}>
+                                            <SkillCard
+                                                icon={skill.icon}
+                                                title={skill.title}
+                                                color={skill.color}
+                                            />
+                                        </SwiperSlide>
+                                    ))
+                                }
+                            </Swiper>
+
+                            {/* <Box
                                 bg={colorMode === 'dark' ? 'gray.900' : 'gray.200'}
                                 borderRadius={10}
                                 p={5}
@@ -200,7 +231,7 @@ const Skill = () => {
                                         <SkillCard key={index} icon={skill.icon} title={skill.title} color={skill.color} />
                                     ))
                                 }
-                            </Box>
+                            </Box> */}
                         </FadeContent>
                     </Box>
                 </Box>
@@ -221,10 +252,40 @@ const Skill = () => {
                         </Box>
                     </Box>
                     <Box
-                        w={'1/2'}>
+                        w={'50%'}
+                        bg={colorMode === 'dark' ? 'gray.900' : 'gray.200'}
+                        borderRadius={10}
+                        p={5}
+                    >
                         <FadeContent>
-                            <Box
-                                // w={'1/2'}
+                            <Swiper
+                                spaceBetween={10}
+                                breakpoints={{
+                                    768: {
+                                        slidesPerView: 2,
+                                    },
+                                    1024: {
+                                        slidesPerView: 3,
+                                    },
+                                    1440: {
+                                        slidesPerView: 4,
+                                    }
+                                }}
+                            >
+                                {
+                                    frontend.map((skill, index) => (
+                                        <SwiperSlide key={index}>
+                                            <SkillCard
+                                                icon={skill.icon}
+                                                title={skill.title}
+                                                color={skill.color}
+                                            />
+                                        </SwiperSlide>
+                                    ))
+                                }
+                            </Swiper>
+
+                            {/* <Box
                                 bg={colorMode === 'dark' ? 'gray.900' : 'gray.200'}
                                 borderRadius={10}
                                 p={5}
@@ -243,7 +304,7 @@ const Skill = () => {
                                         <SkillCard key={index} icon={skill.icon} title={skill.title} color={skill.color} />
                                     ))
                                 }
-                            </Box>
+                            </Box> */}
                         </FadeContent>
                     </Box>
                 </Box>
@@ -262,10 +323,40 @@ const Skill = () => {
                         </Box>
                     </Box>
                     <Box
-                        w={'1/2'}>
+                        w={'50%'}
+                        bg={colorMode === 'dark' ? 'gray.900' : 'gray.200'}
+                        borderRadius={10}
+                        p={5}
+                    >
                         <FadeContent>
-                            <Box
-                                // w={'1/2'}
+                            <Swiper
+                                spaceBetween={10}
+                                breakpoints={{
+                                    768: {
+                                        slidesPerView: 2,
+                                    },
+                                    1024: {
+                                        slidesPerView: 3,
+                                    },
+                                    1440: {
+                                        slidesPerView: 4,
+                                    }
+                                }}
+                            >
+                                {
+                                    backend.map((skill, index) => (
+                                        <SwiperSlide key={index}>
+                                            <SkillCard
+                                                icon={skill.icon}
+                                                title={skill.title}
+                                                color={skill.color}
+                                            />
+                                        </SwiperSlide>
+                                    ))
+                                }
+                            </Swiper>
+
+                            {/* <Box
                                 bg={colorMode === 'dark' ? 'gray.900' : 'gray.200'}
                                 borderRadius={10}
                                 p={5}
@@ -284,7 +375,7 @@ const Skill = () => {
                                         <SkillCard key={index} icon={skill.icon} title={skill.title} color={skill.color} />
                                     ))
                                 }
-                            </Box>
+                            </Box> */}
                         </FadeContent>
                     </Box>
                 </Box>
@@ -303,11 +394,42 @@ const Skill = () => {
                         </Box>
                     </Box>
                     <Box
-                        w={'1/2'}>
+                        w={'50%'}
+                        bg={colorMode === 'dark' ? 'gray.900' : 'gray.200'}
+                        borderRadius={10}
+                        p={5}
+                    >
                         <FadeContent>
+                            <Swiper
+                                spaceBetween={10}
+                                breakpoints={{
+                                    768: {
+                                        slidesPerView: 2,
+                                    },
+                                    1024: {
+                                        slidesPerView: 3,
+                                    },
+                                    1440: {
+                                        slidesPerView: 4,
+                                    }
+                                }}
+                            >
+                                {
+                                    mobile.map((skill, index) => (
+                                        <SwiperSlide key={index}>
+                                            <SkillCard
+                                                icon={skill.icon}
+                                                title={skill.title}
+                                                color={skill.color}
+                                            />
+                                        </SwiperSlide>
+                                    ))
+                                }
+                            </Swiper>
 
-                            <Box
-                                // w={'1/2'}
+
+
+                            {/* <Box
                                 bg={colorMode === 'dark' ? 'gray.900' : 'gray.200'}
                                 borderRadius={10}
                                 p={5}
@@ -326,7 +448,7 @@ const Skill = () => {
                                         <SkillCard key={index} icon={skill.icon} title={skill.title} color={skill.color} />
                                     ))
                                 }
-                            </Box>
+                            </Box> */}
                         </FadeContent>
                     </Box>
                 </Box>
@@ -345,10 +467,41 @@ const Skill = () => {
                         </Box>
                     </Box>
                     <Box
-                        w={'1/2'}>
+                        w={'50%'}
+                        bg={colorMode === 'dark' ? 'gray.900' : 'gray.200'}
+                        borderRadius={10}
+                        p={5}
+                    >
                         <FadeContent>
-                            <Box
-                                // w={'1/2'}
+                            <Swiper
+                                spaceBetween={10}
+                                breakpoints={{
+                                    768: {
+                                        slidesPerView: 2,
+                                    },
+                                    1024: {
+                                        slidesPerView: 3,
+                                    },
+                                    1440: {
+                                        slidesPerView: 4,
+                                    }
+                                }}
+                            >
+                                {
+                                    database.map((skill, index) => (
+                                        <SwiperSlide key={index}>
+                                            <SkillCard
+                                                icon={skill.icon}
+                                                title={skill.title}
+                                                color={skill.color}
+                                            />
+                                        </SwiperSlide>
+                                    ))
+                                }
+                            </Swiper>
+
+
+                            {/* <Box
                                 bg={colorMode === 'dark' ? 'gray.900' : 'gray.200'}
                                 borderRadius={10}
                                 p={5}
@@ -367,7 +520,7 @@ const Skill = () => {
                                         <SkillCard key={index} icon={skill.icon} title={skill.title} color={skill.color} />
                                     ))
                                 }
-                            </Box>
+                            </Box> */}
                         </FadeContent>
                     </Box>
                 </Box>
@@ -386,10 +539,40 @@ const Skill = () => {
                         </Box>
                     </Box>
                     <Box
-                        w={'1/2'}>
+                        w={'50%'}
+                        bg={colorMode === 'dark' ? 'gray.900' : 'gray.200'}
+                        borderRadius={10}
+                        p={5}
+                    >
                         <FadeContent>
-                            <Box
-                                // w={'1/2'}
+                            <Swiper
+                                spaceBetween={10}
+                                breakpoints={{
+                                    768: {
+                                        slidesPerView: 2,
+                                    },
+                                    1024: {
+                                        slidesPerView: 3,
+                                    },
+                                    1440: {
+                                        slidesPerView: 4,
+                                    }
+                                }}
+                            >
+                                {
+                                    other.map((skill, index) => (
+                                        <SwiperSlide key={index}>
+                                            <SkillCard
+                                                icon={skill.icon}
+                                                title={skill.title}
+                                                color={skill.color}
+                                            />
+                                        </SwiperSlide>
+                                    ))
+                                }
+                            </Swiper>
+
+                            {/* <Box
                                 bg={colorMode === 'dark' ? 'gray.900' : 'gray.200'}
                                 borderRadius={10}
                                 p={5}
@@ -408,7 +591,7 @@ const Skill = () => {
                                         <SkillCard key={index} icon={skill.icon} title={skill.title} color={skill.color} />
                                     ))
                                 }
-                            </Box>
+                            </Box> */}
                         </FadeContent>
                     </Box>
                 </Box>

@@ -12,7 +12,10 @@ const SkillCard = ({ icon, title, color }: SkillCardProps) => {
 
     return (
         <Box
-            w={{ lg: '25%', md: '40%' }}
+            // w={{ lg: '25%', md: '40%' }}
+            // boxSize={'130px'}
+            w={'full'}
+            h={'120px'}
             position={'relative'}
             overflow={'hidden'}
             flexDirection={'column'}
@@ -35,7 +38,7 @@ const SkillCard = ({ icon, title, color }: SkillCardProps) => {
             <Box boxSize={10} borderRadius={8} display={'flex'} alignItems={'center'} justifyContent={'center'}>
                 {icon}
             </Box>
-            <Box fontWeight={'medium'} fontSize={'sm'}>
+            <Box fontWeight={'medium'} fontSize={'sm'} textAlign={'center'}>
                 {title}
             </Box>
             <Box w={'full'} h={1} bg={color} position={'absolute'} bottom={0} />
