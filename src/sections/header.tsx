@@ -11,9 +11,14 @@ const Header = () => {
     const [imageLoading, setImageLoading] = useState(true)
 
     return (
-        <Box id="header" display={'flex'} alignItems={'center'}>
+        <Box
+            id="header"
+            display={'flex'}
+            alignItems={'center'}
+            flexDirection={{ base: 'column', md: 'row' }}
+        >
             <Box
-                w={'30%'}
+                w={{ base: '50%', md: '30%' }}
                 display={'flex'}
                 justifyContent={'center'}
                 alignItems={'center'}
@@ -47,7 +52,7 @@ const Header = () => {
                 w={'70%'}
             >
                 <Box
-                asChild
+                    asChild
                     textStyle={{ base: '2xl' }}
                 >
                     <TypeAnimation

@@ -5,7 +5,7 @@ import { MdOutlineLanguage } from "react-icons/md"
 
 const userLanguage = navigator.language.split('-')[0];
 
-const LanguageSwitcher = () => {
+const LanguageSwitcher = ({ visibleText = true }) => {
 
     const [id, setId] = useState(userLanguage === 'id' ? true : false)
 
@@ -20,7 +20,9 @@ const LanguageSwitcher = () => {
     return (
         <Box display="flex" alignItems="center" justifyContent="center" onClick={handleChange}>
             <MdOutlineLanguage />
-            <Text fontSize={'xx-small'} position={'absolute'} bottom={0} right={2}>{id ? 'id' : 'en'}</Text>
+            {visibleText &&
+                <Text fontSize={'xx-small'} position={'absolute'} bottom={0} right={2}>{id ? 'id' : 'en'}</Text>
+            }
         </Box>
     )
 }
