@@ -10,65 +10,91 @@ const Header = () => {
     const [imageLoading, setImageLoading] = useState(true)
 
     return (
-        <Box id="header" display={'flex'}>
+        <Box
+            id="header"
+            display="flex"
+            flexDirection={{ base: 'column', md: 'row' }}
+            alignItems="center"
+            justifyContent="center"
+            px={{ base: 4, md: 12, lg: 24 }}
+            pt={{ base: 10, md: 12 }}
+            gap={{ base: 8, md: 12 }}
+        >
             <Box
-                w={'30%'}
-                display={'flex'}
-                justifyContent={'center'}
-                alignItems={'center'}
+                w={{ smDown: '70%', md: '35%', lg: '30%' }}
+                display="flex"
+                justifyContent="center"
             >
                 <Skeleton
-                    asChild
                     loading={imageLoading}
+                    borderRadius="full"
+                    w="full"
+                    maxW="200px"
+                    aspectRatio={1}
                 >
                     <Box
-                        bg={'whiteAlpha.50'}
-                        h={200}
-                        w={200}
-                        borderRadius={'full'}
-                        border={'5px solid'}
-                        alignItems={'center'}
-                        justifyContent={'center'}
-                        display={'flex'}
-                        overflow={'hidden'}
+                        bg="whiteAlpha.50"
+                        borderRadius="full"
+                        border="5px solid"
+                        borderColor="gray.300"
+                        overflow="hidden"
+                        h={{ sm: '50%', md: '180px', lg: '200px' }}
+                        w={{ sm: 'full', md: '180px', lg: '200px' }}
+                        display="flex"
+                        justifyContent="center"
+                        alignItems="center"
                     >
-                        <Image src="https://avatars.githubusercontent.com/u/80379524?v=4"
-                            loading='lazy'
-                            onLoad={() => setImageLoading(!imageLoading)}
-                            w={'full'}
-                            h={'full'}
-                            zIndex={'auto'}
+                        <Image
+                            src="https://avatars.githubusercontent.com/u/80379524?v=4"
+                            alt="Profile"
+                            loading="lazy"
+                            onLoad={() => setImageLoading(false)}
+                            w="full"
+                            h="full"
+                            objectFit="cover"
                         />
                     </Box>
                 </Skeleton>
             </Box>
+
             <Box
-                w={'70%'}
+                textAlign={{ base: 'center', md: 'left' }}
+                w={'100%'}
             >
-                <Box
-                    textStyle={{ base: 'lg', md: '2xl', lg: '4xl' }}
+                <Text
+                    fontWeight="bold"
+                    fontSize={{ smDown:'2xl', md: '22px', lg: '3xl' }}
+                    mb={2}
                 >
                     <TypeAnimation
                         sequence={[
                             translation('Hi There! 👋'),
-                            500,
+                            800,
                             "Muhamad Ramadhan Fatra",
-                            1000,
+                            1200,
                         ]}
-                        deletionSpeed={50}
+                        deletionSpeed={60}
                         wrapper="span"
                         cursor={true}
-                        style={{ display: 'inline-block', fontWeight: 'bold', marginBottom: 15 }}
+                        style={{ display: 'inline-block' }}
                     />
-                </Box>
-                <Text fontSize={24} color={'gray.400'} mb={5} fontWeight={'medium'}>
-                    Fullstack Developer
                 </Text>
-                <Text textStyle={{ base: 'base' }}>{translation("Intro")}</Text>
+
+                <Text
+                    fontSize={{ smDown: 16, lg: 20 }}
+                    color="gray.500"
+                    fontWeight="medium"
+                    mb={3}
+                >
+                    Junior Web/Software Developer
+                </Text>
+
+                <Text textStyle={{ smDown: 'sm', md: 'sm', lg: 'base' }}>{translation("Intro")}</Text>
+
                 <Box
                     as={Button}
                     mt={10}
-                    display={'flex'}
+                    display={{ md: 'flex' }}
                     alignItems={'center'}
                     gap={3}
                 >
@@ -76,7 +102,7 @@ const Header = () => {
                     <BiDownload />
                 </Box>
             </Box>
-        </Box >
+        </Box>
     )
 }
 

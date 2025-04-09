@@ -38,24 +38,6 @@ const Certificate = () => {
             }],
         },
         {
-            title: "Analyze Speech and Language with Google API's",
-            image: "gcp-ml-1.png",
-            description: translate("Analyze Speech and Language with Google API's by Google Cloud Platform (GCP)."),
-            tags: [{
-                name: "Google Cloud Platform",
-                color: "blue.500"
-            },
-            {
-                name: "Machine Learning",
-                color: "green.500"
-            },
-            {
-                name: "AI",
-                color: "purple.500"
-            },
-            ],
-        },
-        {
             title: "Junior Web Developer",
             image: "jwd.jpg",
             description: translate("Vocational School Graduate Academy (VSGA) Junior Web Developer Training by Kominfo."),
@@ -80,46 +62,39 @@ const Certificate = () => {
                 color: "orange.500"
             }],
         },
-        {
-            title: "Web Design Competition 2024",
-            image: "mrt_award.jpg",
-            description: translate("Web Design Competition Award Winning 2024 1st place."),
-            tags: [{
-                name: "HTML",
-                color: "red.500"
-            },
-            {
-                name: "CSS",
-                color: "blue.500"
-            },
-            {
-                name: "Javascript",
-                color: "yellow.500"
-            }],
-        },
     ]
 
     return (
         <Box id="certificate">
             <Box mb={5}>
-                <Heading size={'3xl'} fontWeight={'bold'}>{translate("Awards & Certificates")}</Heading>
-                <Text>{translate("Here are some of my achievements and certificates.")}</Text>
+                <Heading textStyle={{ base: 'lg', md: 'xl', lg: '3xl' }} fontWeight={'bold'}>{translate("Awards & Certificates")}</Heading>
+                <Text textStyle={{ smDown: 'sm' }}>{translate("Here are some of my achievements and certificates.")}</Text>
             </Box>
 
-            <Box display={'flex'} flexWrap={'wrap'} justifyContent={'space-between'} gapY={5}>
+            <Box
+                overflowX="auto"
+                gap={5}
+                whiteSpace="nowrap"
+                py={6}
+                display={'flex'}
+            >
                 {
                     certificate.map((project, index) => (
-                        <Card
+                        <Box
                             key={index}
-                            title={project.title}
-                            image={project.image}
-                            description={project.description}
-                            tags={project.tags}
-                        />
+                            display="inline-block"
+                        >
+                            <Card
+                                title={project.title}
+                                image={project.image}
+                                description={project.description}
+                                tags={project.tags}
+                            />
+                        </Box>
                     ))
                 }
             </Box>
-        </Box>
+        </Box >
     )
 }
 

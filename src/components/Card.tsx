@@ -41,7 +41,7 @@ const CardProject = ({ title, image, description, tags, github }: CardProjectPro
 
   return (
     <DialogRoot scrollBehavior={'inside'} placement={'center'} motionPreset={'slide-in-bottom'} size={'lg'} closeOnInteractOutside closeOnEscape>
-      <Card.Root ref={cardRef} maxW="xl" w={'sm'} overflow="hidden" borderRadius={10} boxShadow={'lg'} border={'1px solid'} borderColor={colorMode === 'light' ? 'gray.400' : 'gray.800'}>
+      <Card.Root ref={cardRef} maxW="xl" w={{ smDown: '320px', md: 'sm' }} h={github ? '470px' : '450px'} overflow="hidden" borderRadius={10} boxShadow={'lg'} border={'1px solid'} borderColor={colorMode === 'light' ? 'gray.400' : 'gray.800'}>
         <Box display={'flex'} justifyContent={'center'} alignItems={'center'} p={3} position="relative">
           <DialogTrigger asChild>
             <Box as="div" position="relative" cursor="pointer">
@@ -80,8 +80,8 @@ const CardProject = ({ title, image, description, tags, github }: CardProjectPro
           </DialogTrigger>
         </Box>
         <Card.Body gap="2">
-          <Card.Title>{title}</Card.Title>
-          <Card.Description>
+          <Card.Title textWrap={'wrap'} textStyle={{ base: '', md: 'lg', lg: 'xl' }}>{title}</Card.Title>
+          <Card.Description flex={1} lineClamp={3} fontSize={'sm'} color={'gray.500'} textOverflow={'ellipsis'} overflow={'hidden'}>
             {description}
           </Card.Description>
           <HStack mt="4" flexWrap={'wrap'} gap="2">

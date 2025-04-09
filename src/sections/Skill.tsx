@@ -1,6 +1,6 @@
 import { SkillCard } from "@/components"
 import { useColorMode } from "@/components/ui/color-mode"
-import { Box, Heading, Image, Text } from "@chakra-ui/react"
+import { Box, Heading, Image, Text, useBreakpointValue } from "@chakra-ui/react"
 import { useTranslation } from "react-i18next"
 import { FiChevronsRight } from "react-icons/fi"
 import { SiChakraui, SiExpress, SiJavascript, SiLaravel, SiMongodb, SiNextdotjs, SiReact, SiShadcnui, SiTailwindcss } from "react-icons/si"
@@ -8,6 +8,7 @@ import { SiChakraui, SiExpress, SiJavascript, SiLaravel, SiMongodb, SiNextdotjs,
 const Skill = () => {
     const { t: translate } = useTranslation()
     const { colorMode } = useColorMode()
+    const isMobile = useBreakpointValue({ base: true, sm: false })
 
     const fundamental = [
         {
@@ -140,23 +141,29 @@ const Skill = () => {
     return (
         <Box id="skill" display={'flex'} flexDirection={'column'} gap={5}>
             <Box mb={10} textAlign={'center'}>
-                <Heading size={'3xl'} fontWeight={'bold'}>{translate("My Skills")}</Heading>
-                <Text>{translate("Here are some of the technologies I have experience with.")}</Text>
+                <Heading textStyle={{ base: 'lg', md: 'xl', lg: '3xl' }} fontWeight={'bold'}>{translate("My Skills")}</Heading>
+                <Text textStyle={{ smDown: 'sm' }}>{translate("Here are some of the technologies I have experience with.")}</Text>
             </Box>
 
-            <Box display={'flex'} flexDirection={'column'} gap={20}>
+            <Box display={'flex'} flexDirection={'column'} gap={{ smDown: 10, md: 20 }} alignItems={{ sm: 'center', md: 'normal' }} justifyContent={'center'}>
 
-                <Box display={'flex'} gap={4} alignItems={'center'}>
-                    <Box w={'50%'}>
-                        <Heading size={'lg'}>Fundamental</Heading>
-                        <Text color={'gray.500'}>{translate("These are the basic skills that i have mastered.")}</Text>
-                        <Box display={'flex'} mt={5} alignItems={'center'} gap={2}>
-                            <Text fontSize={'sm'} color={'gray.500'}>{translate("Scroll to see more")}</Text>
-                            <FiChevronsRight style={{ marginTop: '2px' }} color={colorMode === 'dark' ? 'white' : 'black'} opacity={.5} />
+                <Box display={{ sm: 'block', md: 'flex' }} gap={4} alignItems={'center'}>
+                    <Box w={{ md: '50%' }}>
+                        <Heading textStyle={{ smDown: 'md', md: 'lg' }}>Fundamental</Heading>
+                        <Text textStyle={{ smDown: 'sm' }} color={'gray.500'}>{translate("These are the basic skills that i have mastered.")}</Text>
+                        <Box display={'flex'} mt={5} mb={{ smDown: 2 }} alignItems={'center'} gap={2}>
+                            <Text fontSize={{ smDown: 'x-small', md: 'sm' }} color={'gray.500'}>{translate("Scroll to see more")}</Text>
+                            {
+                                isMobile
+                                    ?
+                                    <FiChevronsRight size={10} color={colorMode === 'dark' ? 'white' : 'black'} opacity={.5} />
+                                    :
+                                    <FiChevronsRight style={{ marginTop: '2px' }} size={15} color={colorMode === 'dark' ? 'white' : 'black'} opacity={.5} />
+                            }
                         </Box>
                     </Box>
                     <Box
-                        w={'1/2'}
+                        w={{ md: '50%' }}
                         bg={colorMode === 'dark' ? 'gray.900' : 'gray.200'}
                         borderRadius={10}
                         p={5}
@@ -178,17 +185,23 @@ const Skill = () => {
                     </Box>
                 </Box>
 
-                <Box display={'flex'} gap={4} alignItems={'center'}>
-                    <Box w={'50%'}>
-                        <Heading size={'lg'}>Frontend</Heading>
-                        <Text color={'gray.500'}>{translate("These are the frontend development technologies that I have mastered.")}</Text>
-                        <Box display={'flex'} mt={5} alignItems={'center'} gap={2}>
-                            <Text fontSize={'sm'} color={'gray.500'}>{translate("Scroll to see more")}</Text>
-                            <FiChevronsRight style={{ marginTop: '2px' }} color={colorMode === 'dark' ? 'white' : 'black'} opacity={.5} />
+                <Box display={{ sm: 'block', md: 'flex' }} gap={4} alignItems={'center'}>
+                    <Box w={{ md: '50%' }}>
+                        <Heading textStyle={{ smDown: 'md', md: 'lg' }}>Frontend</Heading>
+                        <Text textStyle={{ smDown: 'sm' }} color={'gray.500'}>{translate("These are the frontend development technologies that I have mastered.")}</Text>
+                        <Box display={'flex'} mt={5} mb={{ smDown: 2 }} alignItems={'center'} gap={2}>
+                            <Text fontSize={{ smDown: 'x-small', md: 'sm' }} color={'gray.500'}>{translate("Scroll to see more")}</Text>
+                            {
+                                isMobile
+                                    ?
+                                    <FiChevronsRight size={10} color={colorMode === 'dark' ? 'white' : 'black'} opacity={.5} />
+                                    :
+                                    <FiChevronsRight style={{ marginTop: '2px' }} size={15} color={colorMode === 'dark' ? 'white' : 'black'} opacity={.5} />
+                            }
                         </Box>
                     </Box>
                     <Box
-                        w={'1/2'}
+                        w={{ md: '50%' }}
                         bg={colorMode === 'dark' ? 'gray.900' : 'gray.200'}
                         borderRadius={10}
                         p={5}
@@ -210,17 +223,23 @@ const Skill = () => {
                     </Box>
                 </Box>
 
-                <Box display={'flex'} gap={4} alignItems={'center'}>
-                    <Box w={'50%'}>
-                        <Heading size={'lg'}>Backend</Heading>
-                        <Text color={'gray.500'}>{translate("These are the backend development technologies that I have mastered.")}</Text>
-                        <Box display={'flex'} mt={5} alignItems={'center'} gap={2}>
-                            <Text fontSize={'sm'} color={'gray.500'}>{translate("Scroll to see more")}</Text>
-                            <FiChevronsRight style={{ marginTop: '2px' }} color={colorMode === 'dark' ? 'white' : 'black'} opacity={.5} />
+                <Box display={{ sm: 'block', md: 'flex' }} gap={4} alignItems={'center'}>
+                    <Box w={{ md: '50%' }}>
+                        <Heading textStyle={{ smDown: 'md', md: 'lg' }}>Backend</Heading>
+                        <Text textStyle={{ smDown: 'sm' }} color={'gray.500'}>{translate("These are the backend development technologies that I have mastered.")}</Text>
+                        <Box display={'flex'} mt={5} mb={{ smDown: 2 }} alignItems={'center'} gap={2}>
+                            <Text fontSize={{ smDown: 'x-small', md: 'sm' }} color={'gray.500'}>{translate("Scroll to see more")}</Text>
+                            {
+                                isMobile
+                                    ?
+                                    <FiChevronsRight size={10} color={colorMode === 'dark' ? 'white' : 'black'} opacity={.5} />
+                                    :
+                                    <FiChevronsRight style={{ marginTop: '2px' }} size={15} color={colorMode === 'dark' ? 'white' : 'black'} opacity={.5} />
+                            }
                         </Box>
                     </Box>
                     <Box
-                        w={'1/2'}
+                        w={{ md: '50%' }}
                         bg={colorMode === 'dark' ? 'gray.900' : 'gray.200'}
                         borderRadius={10}
                         p={5}
@@ -242,17 +261,23 @@ const Skill = () => {
                     </Box>
                 </Box>
 
-                <Box display={'flex'} gap={4} alignItems={'center'}>
-                    <Box w={'50%'}>
-                        <Heading size={'lg'}>Mobile</Heading>
-                        <Text color={'gray.500'}>{translate("These are the mobile development technologies that I have mastered.")}</Text>
-                        <Box display={'flex'} mt={5} alignItems={'center'} gap={2}>
-                            <Text fontSize={'sm'} color={'gray.500'}>{translate("Scroll to see more")}</Text>
-                            <FiChevronsRight style={{ marginTop: '2px' }} color={colorMode === 'dark' ? 'white' : 'black'} opacity={.5} />
+                <Box display={{ sm: 'block', md: 'flex' }} gap={4} alignItems={'center'}>
+                    <Box w={{ md: '50%' }}>
+                        <Heading textStyle={{ smDown: 'md', md: 'lg' }}>Mobile</Heading>
+                        <Text textStyle={{ smDown: 'sm' }} color={'gray.500'}>{translate("These are the mobile development technologies that I have mastered.")}</Text>
+                        <Box display={'flex'} mt={5} mb={{ smDown: 2 }} alignItems={'center'} gap={2}>
+                            <Text fontSize={{ smDown: 'x-small', md: 'sm' }} color={'gray.500'}>{translate("Scroll to see more")}</Text>
+                            {
+                                isMobile
+                                    ?
+                                    <FiChevronsRight size={10} color={colorMode === 'dark' ? 'white' : 'black'} opacity={.5} />
+                                    :
+                                    <FiChevronsRight style={{ marginTop: '2px' }} size={15} color={colorMode === 'dark' ? 'white' : 'black'} opacity={.5} />
+                            }
                         </Box>
                     </Box>
                     <Box
-                        w={'1/2'}
+                        w={{ md: '50%' }}
                         bg={colorMode === 'dark' ? 'gray.900' : 'gray.200'}
                         borderRadius={10}
                         p={5}
@@ -274,17 +299,23 @@ const Skill = () => {
                     </Box>
                 </Box>
 
-                <Box display={'flex'} gap={4} alignItems={'center'}>
-                    <Box w={'50%'}>
-                        <Heading size={'lg'}>Database</Heading>
-                        <Text color={'gray.500'}>{translate("These are the database technologies that I have mastered.")}</Text>
-                        <Box display={'flex'} mt={5} alignItems={'center'} gap={2}>
-                            <Text fontSize={'sm'} color={'gray.500'}>{translate("Scroll to see more")}</Text>
-                            <FiChevronsRight style={{ marginTop: '2px' }} color={colorMode === 'dark' ? 'white' : 'black'} opacity={.5} />
+                <Box display={{ sm: 'block', md: 'flex' }} gap={4} alignItems={'center'}>
+                    <Box w={{ md: '50%' }}>
+                        <Heading textStyle={{ smDown: 'md', md: 'lg' }} size={'lg'}>Database</Heading>
+                        <Text textStyle={{ smDown: 'sm' }} color={'gray.500'}>{translate("These are the database technologies that I have mastered.")}</Text>
+                        <Box display={'flex'} mt={5} mb={{ smDown: 2 }} alignItems={'center'} gap={2}>
+                            <Text fontSize={{ smDown: 'x-small', md: 'sm' }} color={'gray.500'}>{translate("Scroll to see more")}</Text>
+                            {
+                                isMobile
+                                    ?
+                                    <FiChevronsRight size={10} color={colorMode === 'dark' ? 'white' : 'black'} opacity={.5} />
+                                    :
+                                    <FiChevronsRight style={{ marginTop: '2px' }} size={15} color={colorMode === 'dark' ? 'white' : 'black'} opacity={.5} />
+                            }
                         </Box>
                     </Box>
                     <Box
-                        w={'1/2'}
+                        w={{ md: '50%' }}
                         bg={colorMode === 'dark' ? 'gray.900' : 'gray.200'}
                         borderRadius={10}
                         p={5}
@@ -306,17 +337,23 @@ const Skill = () => {
                     </Box>
                 </Box>
 
-                <Box display={'flex'} gap={4} alignItems={'center'}>
-                    <Box w={'50%'}>
-                        <Heading size={'lg'}>{translate("Other")}</Heading>
-                        <Text color={'gray.500'}>{translate("These are the other technologies that I have mastered.")}</Text>
-                        <Box display={'flex'} mt={5} alignItems={'center'} gap={2}>
-                            <Text fontSize={'sm'} color={'gray.500'}>{translate("Scroll to see more")}</Text>
-                            <FiChevronsRight style={{ marginTop: '2px' }} color={colorMode === 'dark' ? 'white' : 'black'} opacity={.5} />
+                <Box display={{ sm: 'block', md: 'flex' }} gap={4} alignItems={'center'}>
+                    <Box w={{ md: '50%' }}>
+                        <Heading textStyle={{ smDown: 'md', md: 'lg' }} size={'lg'}>{translate("Other")}</Heading>
+                        <Text textStyle={{ smDown: 'sm' }} color={'gray.500'}>{translate("These are the other technologies that I have mastered.")}</Text>
+                        <Box display={'flex'} mt={5} mb={{ smDown: 2 }} alignItems={'center'} gap={2}>
+                            <Text alignSelf={'end'} fontSize={{ smDown: 'x-small', md: 'sm' }} color={'gray.500'}>{translate("Scroll to see more")}</Text>
+                            {
+                                isMobile
+                                    ?
+                                    <FiChevronsRight size={10} color={colorMode === 'dark' ? 'white' : 'black'} opacity={.5} />
+                                    :
+                                    <FiChevronsRight style={{ marginTop: '2px' }} size={15} color={colorMode === 'dark' ? 'white' : 'black'} opacity={.5} />
+                            }
                         </Box>
                     </Box>
                     <Box
-                        w={'1/2'}
+                        w={{ md: '50%' }}
                         bg={colorMode === 'dark' ? 'gray.900' : 'gray.200'}
                         borderRadius={10}
                         p={5}

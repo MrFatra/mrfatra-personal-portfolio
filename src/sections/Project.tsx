@@ -7,40 +7,28 @@ const Project = () => {
 
     const projects = [
         {
-            title: "Islam Heritage",
-            image: "islam-heritage.png",
-            description: "Web Design Dies Natalis - MRT Team 2024.",
+            title: "Fine Search",
+            image: "finesearch.png",
+            description: translate("Simple Semantic Search Engine built with Next JS, Drizzle, Vector Upstash, Neon Tech + Postgres."),
             tags: [{
-                name: "HTML",
-                color: "red.500"
+                name: "Next JS",
+                color: "black"
             }, {
-                name: "CSS",
+                name: "Drizzle",
                 color: "blue.500"
             }, {
-                name: "Javascript",
+                name: "Vector Upstash",
                 color: "yellow.500"
-            }],
-            github: "https://github.com/MrFatra/dies_natalis_mrt"
-        },
-        {
-            title: "Chat App",
-            image: "chat-app2.png",
-            description: translate("A minimalistic chat app built with MERN stack."),
-            tags: [{
-                name: "MongoDB",
-                color: "green.700"
-            }, {
-                name: "Express",
-                color: "orange.500"
-            }, {
-                name: "React JS",
-                color: "blue.500"
             },
             {
-                name: "Node JS",
+                name: "Neon Tech",
                 color: "green.500"
+            },
+            {
+                name: "Postgres",
+                color: "blue.500"
             }],
-            github: "https://github.com/MrFatra/mern-chat-app"
+            github: "https://github.com/MrFatra/finesearch"
         },
         {
             title: "Fine Search",
@@ -72,21 +60,31 @@ const Project = () => {
     return (
         <Box id="project">
             <Box mb={5}>
-                <Heading size={'3xl'} fontWeight={'bold'}>{translate("My Projects")}</Heading>
-                <Text>{translate("Here are some of my projects that I have worked on.")}</Text>
+                <Heading textStyle={{ base: 'lg', md: 'xl', lg: '3xl' }} fontWeight={'bold'}>{translate("My Projects")}</Heading>
+                <Text textStyle={{ smDown: 'sm' }}>{translate("Here are some of my projects that I have worked on.")}</Text>
             </Box>
 
-            <Box display={'flex'} flexWrap={'wrap'} justifyContent={'space-between'} gapY={5}>
+            <Box
+                overflowX="auto"
+                gap={5}
+                whiteSpace="nowrap"
+                py={6}
+                display={'flex'}
+            >
                 {
                     projects.map((project, index) => (
-                        <Card
+                        <Box
                             key={index}
-                            title={project.title}
-                            image={project.image}
-                            description={project.description}
-                            tags={project.tags}
-                            github={project.github}
-                        />
+                            display="inline-block"
+                        >
+                            <Card
+                                title={project.title}
+                                image={project.image}
+                                description={project.description}
+                                tags={project.tags}
+                                github={project.github}
+                            />
+                        </Box>
                     ))
                 }
             </Box>

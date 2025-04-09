@@ -1,16 +1,18 @@
 import { useColorMode } from '@/components/ui/color-mode'
-import { Box, Heading, Image, LinkBox, LinkOverlay, Text } from '@chakra-ui/react'
+import { Box, Heading, Image, LinkBox, LinkOverlay, Text, useBreakpointValue } from '@chakra-ui/react'
 import { useTranslation } from 'react-i18next'
 import { BiLinkExternal as LinkIcon } from 'react-icons/bi'
 
 const About = () => {
   const { t: translate } = useTranslation()
   const { colorMode } = useColorMode()
+  const isMobile = useBreakpointValue({ base: true, sm: false })
+
   return (
     <Box id='about' display={'flex'} flexDirection={'column'} justifyContent={'center'} alignItems={'center'}>
       <Box mb={10} textAlign={'center'}>
-        <Heading size={'3xl'} fontWeight={'bold'}>{translate("About This Website")}</Heading>
-        <Text>
+        <Heading textStyle={{ base: 'lg', md: 'xl', lg: '3xl' }} fontWeight={'bold'}>{translate("About This Website")}</Heading>
+        <Text textStyle={{ smDown: 'sm' }}>
           {translate("This is my personal portfolio website. I built this website using:")}
         </Text>
       </Box>
@@ -21,8 +23,8 @@ const About = () => {
           p={4}
           bg={colorMode === 'dark' ? 'gray.800' : 'gray.100'}
           borderRadius={10}
-          w={120}
-          h={120}
+          w={{ smDown: 100, md: 120 }}
+          h={{ smDown: 100, md: 120 }}
           display={'flex'}
           flexDirection={'column'}
           alignItems={'center'}
@@ -40,7 +42,13 @@ const About = () => {
           <p>
             <LinkOverlay asChild>
               <a href="https://chakra-ui.com" target="_blank" rel="noreferrer">
-                <LinkIcon size={20} style={{ position: 'absolute', bottom: 10, right: 10 }} />
+                {
+                  isMobile
+                    ?
+                    <LinkIcon size={15} style={{ position: 'absolute', bottom: 10, right: 10 }} />
+                    :
+                    <LinkIcon size={20} style={{ position: 'absolute', bottom: 10, right: 10 }} />
+                }
               </a>
             </LinkOverlay>
           </p>
@@ -53,8 +61,8 @@ const About = () => {
           p={4}
           bg={colorMode === 'dark' ? 'gray.800' : 'gray.100'}
           borderRadius={10}
-          w={120}
-          h={120}
+          w={{ smDown: 100, md: 120 }}
+          h={{ smDown: 100, md: 120 }}
           display={'flex'}
           flexDirection={'column'}
           alignItems={'center'}
@@ -68,14 +76,20 @@ const About = () => {
             transition: 'all 0.2s'
           }}
         >
-          <Box boxSize={10} display={'flex'} alignItems={'center'} justifyContent={'center'} gap={2}>
+          <Box boxSize={{ smDown: 5, md: 10 }} display={'flex'} alignItems={'center'} justifyContent={'center'} gap={2}>
             <Image src='https://upload.wikimedia.org/wikipedia/commons/thumb/a/a7/React-icon.svg/512px-React-icon.svg.png' alt='React JS' />
-            <Text>React</Text>
+            <Text fontSize={{ smDown: 'sm' }}>React</Text>
           </Box>
           <p>
             <LinkOverlay asChild>
               <a href="https://react.dev" target="_blank" rel="noreferrer">
-                <LinkIcon size={20} style={{ position: 'absolute', bottom: 10, right: 10 }} />
+                {
+                  isMobile
+                    ?
+                    <LinkIcon size={15} style={{ position: 'absolute', bottom: 10, right: 10 }} />
+                    :
+                    <LinkIcon size={20} style={{ position: 'absolute', bottom: 10, right: 10 }} />
+                }
               </a>
             </LinkOverlay>
           </p>

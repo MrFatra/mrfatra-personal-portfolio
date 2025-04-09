@@ -18,9 +18,21 @@ const LanguageSwitcher = () => {
 
 
     return (
-        <Box display="flex" alignItems="center" justifyContent="center" onClick={handleChange}>
+        <Box
+            position={'relative'}
+            display="flex"
+            alignItems="center"
+            justifyContent="center"
+            onClick={handleChange}
+            css={{
+                _icon: {
+                    width: "5",
+                    height: "5",
+                },
+            }}
+        >
             <MdOutlineLanguage />
-            <Text fontSize={'xx-small'} position={'absolute'} bottom={0} right={2}>{id ? 'id' : 'en'}</Text>
+            <Text fontSize={'xx-small'} position={'absolute'} bottom={-2} right={-2}>{id ? 'id' : 'en'}</Text>
         </Box>
     )
 }
