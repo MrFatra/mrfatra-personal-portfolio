@@ -7,11 +7,12 @@ import {
   IconButton,
   Collapsible,
   Text,
+  useDisclosure,
 } from "@chakra-ui/react"
 import { Link as RouterLink } from "react-router-dom"
 import { ColorModeButton, useColorMode } from "./ui/color-mode"
 import { useTranslation } from "react-i18next"
-import { FaBars } from "react-icons/fa6"
+import { FaBars, FaXmark } from "react-icons/fa6"
 import LanguageSwitcher from "./LanguageSwitcher"
 import { Tooltip } from "./ui/tooltip"
 import { BiDownload } from "react-icons/bi"
@@ -20,6 +21,7 @@ import { Button } from "./ui/button"
 const Navbar = () => {
   const { t: translation } = useTranslation()
   const { colorMode, setColorMode } = useColorMode()
+  const { open, onToggle } = useDisclosure()
 
   const menuItems = [
     { label: translation("Home"), href: "/" },
@@ -43,18 +45,23 @@ const Navbar = () => {
       px={{ base: 5, md: 10 }}
       py={3}
     >
-      <Collapsible.Root unmountOnExit>
+      <Collapsible.Root unmountOnExit open={open}>
         <HStack justifyContent="space-between" alignItems="center">
           <Box display="flex" alignItems="center" gap={4}>
             {/* Menu Toggle (Mobile) */}
-            <Collapsible.Trigger>
+            <Collapsible.Trigger onClick={onToggle}>
               <IconButton
                 display={{ base: "inline-flex", md: "none" }}
                 variant="ghost"
                 aria-label="Toggle Navigation"
                 fontSize="20px"
               >
-                <FaBars />
+                {
+                  open ?
+                  <FaXmark />
+                  :
+                  <FaBars />
+                }
               </IconButton>
             </Collapsible.Trigger>
 
