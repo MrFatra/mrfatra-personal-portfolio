@@ -59,7 +59,7 @@ const Project = () => {
 
     return (
         <Box id="project">
-            <Box mb={5}>
+            <Box mb={5} textAlign={{ smDown: 'center' }}>
                 <Heading textStyle={{ base: 'lg', md: 'xl', lg: '3xl' }} fontWeight={'bold'}>{translate("My Projects")}</Heading>
                 <Text textStyle={{ smDown: 'sm' }}>{translate("Here are some of my projects that I have worked on.")}</Text>
             </Box>

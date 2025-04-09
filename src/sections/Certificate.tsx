@@ -66,7 +66,7 @@ const Certificate = () => {
 
     return (
         <Box id="certificate">
-            <Box mb={5}>
+            <Box mb={5} textAlign={{ smDown: 'center' }}>
                 <Heading textStyle={{ base: 'lg', md: 'xl', lg: '3xl' }} fontWeight={'bold'}>{translate("Awards & Certificates")}</Heading>
                 <Text textStyle={{ smDown: 'sm' }}>{translate("Here are some of my achievements and certificates.")}</Text>
             </Box>
