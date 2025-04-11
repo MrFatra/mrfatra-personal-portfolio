@@ -77,7 +77,7 @@ const Navbar = () => {
             </Box>
           </Box>
 
-          <Box display={{ smDown: "flex", md: 'none' }} alignItems="center" gap={4}>
+          <Box display={{ smDown: "flex", mdDown: 'flex', md: 'none' }} alignItems="center" gap={4}>
             <Tooltip content='Toggle Language' openDelay={200} closeDelay={200}>
               <Box bg={colorMode === 'dark' ? 'whiteAlpha.300' : 'blackAlpha.300'} borderRadius={10} py={2} px={'2.5'} zIndex={100}>
                 <LanguageSwitcher />

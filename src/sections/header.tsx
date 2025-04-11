@@ -38,8 +38,8 @@ const Header = () => {
                         border="5px solid"
                         borderColor="gray.300"
                         overflow="hidden"
-                        h={{ sm: '50%', md: '180px', lg: '200px' }}
-                        w={{ sm: 'full', md: '180px', lg: '200px' }}
+                        h={{ sm: '50%', mdDown: 'full',  md: '180px', lg: '200px' }}
+                        w={{ sm: 'full', mdDown: 'full', md: '180px', lg: '200px' }}
                         display="flex"
                         justifyContent="center"
                         alignItems="center"
@@ -63,7 +63,7 @@ const Header = () => {
             >
                 <Text
                     fontWeight="bold"
-                    fontSize={{ smDown:'2xl', md: '22px', lg: '3xl' }}
+                    fontSize={{ smDown:'2xl', mdDown: '26px', md: '22px', lg: '3xl' }}
                     mb={2}
                 >
                     <TypeAnimation
@@ -81,7 +81,7 @@ const Header = () => {
                 </Text>
 
                 <Text
-                    fontSize={{ smDown: 16, lg: 20 }}
+                    fontSize={{ smDown: 16, mdDown: 18, lg: 20 }}
                     color="gray.500"
                     fontWeight="medium"
                     mb={3}

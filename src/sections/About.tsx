@@ -11,7 +11,7 @@ const About = () => {
   return (
     <Box id='about' display={'flex'} flexDirection={'column'} justifyContent={'center'} alignItems={'center'}>
       <Box mb={10} textAlign={'center'}>
-        <Heading textStyle={{ base: 'lg', md: 'xl', lg: '3xl' }} fontWeight={'bold'}>{translate("About This Website")}</Heading>
+        <Heading textStyle={{ base: 'lg', mdDown: 'xl', md: 'xl', lg: '3xl' }} fontWeight={'bold'}>{translate("About This Website")}</Heading>
         <Text textStyle={{ smDown: 'sm' }}>
           {translate("This is my personal portfolio website. I built this website using:")}
         </Text>
@@ -23,8 +23,8 @@ const About = () => {
           p={4}
           bg={colorMode === 'dark' ? 'gray.800' : 'gray.100'}
           borderRadius={10}
-          w={{ smDown: 100, md: 120 }}
-          h={{ smDown: 100, md: 120 }}
+          w={{ smDown: '80px', mdDown: 120, md: 120 }}
+          h={{ smDown: '80px', mdDown: 120, md: 120 }}
           display={'flex'}
           flexDirection={'column'}
           alignItems={'center'}
@@ -61,8 +61,8 @@ const About = () => {
           p={4}
           bg={colorMode === 'dark' ? 'gray.800' : 'gray.100'}
           borderRadius={10}
-          w={{ smDown: 100, md: 120 }}
-          h={{ smDown: 100, md: 120 }}
+          w={{ smDown: '80px', mdDown: 120, md: 120 }}
+          h={{ smDown: '80px', mdDown: 120, md: 120 }}
           display={'flex'}
           flexDirection={'column'}
           alignItems={'center'}
@@ -76,7 +76,7 @@ const About = () => {
             transition: 'all 0.2s'
           }}
         >
-          <Box boxSize={{ smDown: 5, md: 10 }} display={'flex'} alignItems={'center'} justifyContent={'center'} gap={2}>
+          <Box boxSize={{ smDown: 5, mdDown: 10, md: 10 }} display={'flex'} alignItems={'center'} justifyContent={'center'} gap={2}>
             <Image src='https://upload.wikimedia.org/wikipedia/commons/thumb/a/a7/React-icon.svg/512px-React-icon.svg.png' alt='React JS' />
             <Text fontSize={{ smDown: 'sm' }}>React</Text>
           </Box>

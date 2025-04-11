@@ -41,7 +41,7 @@ const CardProject = ({ title, image, description, tags, github }: CardProjectPro
 
   return (
     <DialogRoot scrollBehavior={'inside'} placement={'center'} motionPreset={'slide-in-bottom'} size={'lg'} closeOnInteractOutside closeOnEscape>
-      <Card.Root ref={cardRef} maxW="xl" w={{ smDown: '320px', md: 'sm' }} h={github ? '500px' : '450px'} overflow="hidden" borderRadius={10} boxShadow={'lg'} border={'1px solid'} borderColor={colorMode === 'light' ? 'gray.400' : 'gray.800'}>
+      <Card.Root ref={cardRef} maxW="xl" w={{ smDown: '290px', sm: '320px', mdDown: 'sm', md: 'sm' }} h={github ? '500px' : '450px'} overflow="hidden" borderRadius={10} boxShadow={'lg'} border={'1px solid'} borderColor={colorMode === 'light' ? 'gray.400' : 'gray.800'}>
         <Box display={'flex'} justifyContent={'center'} alignItems={'center'} p={3} position="relative">
           <DialogTrigger asChild>
             <Box as="div" position="relative" cursor="pointer">

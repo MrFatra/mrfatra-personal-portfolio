@@ -141,15 +141,15 @@ const Skill = () => {
     return (
         <Box id="skill" display={'flex'} flexDirection={'column'} gap={5}>
             <Box mb={10} textAlign={'center'}>
-                <Heading textStyle={{ base: 'lg', md: 'xl', lg: '3xl' }} fontWeight={'bold'}>{translate("My Skills")}</Heading>
+                <Heading textStyle={{ base: 'lg', mdDown: 'xl', md: 'xl', lg: '3xl' }} fontWeight={'bold'}>{translate("My Skills")}</Heading>
                 <Text textStyle={{ smDown: 'sm' }}>{translate("Here are some of the technologies I have experience with.")}</Text>
             </Box>
 
-            <Box display={'flex'} flexDirection={'column'} gap={{ smDown: 10, md: 20 }} alignItems={{ sm: 'center', md: 'normal' }} justifyContent={'center'}>
+            <Box display={'flex'} flexDirection={'column'} gap={{ smDown: 10, mdDown: 20, md: 20 }} alignItems={{ sm: 'center', mdDown: 'normal', md: 'normal' }} justifyContent={'center'}>
 
                 <Box display={{ sm: 'block', md: 'flex' }} gap={4} alignItems={'center'}>
                     <Box w={{ md: '50%' }}>
-                        <Heading textStyle={{ smDown: 'md', md: 'lg' }}>Fundamental</Heading>
+                        <Heading textStyle={{ smDown: 'md', mdDown: 'lg', md: 'lg' }}>Fundamental</Heading>
                         <Text textStyle={{ smDown: 'sm' }} color={'gray.500'}>{translate("These are the basic skills that i have mastered.")}</Text>
                         <Box display={'flex'} mt={5} mb={{ smDown: 2 }} alignItems={'center'} gap={2}>
                             <Text fontSize={{ smDown: 'x-small', md: 'sm' }} color={'gray.500'}>{translate("Scroll to see more")}</Text>
@@ -187,7 +187,7 @@ const Skill = () => {
 
                 <Box display={{ sm: 'block', md: 'flex' }} gap={4} alignItems={'center'}>
                     <Box w={{ md: '50%' }}>
-                        <Heading textStyle={{ smDown: 'md', md: 'lg' }}>Frontend</Heading>
+                        <Heading textStyle={{ smDown: 'md', mdDown: 'lg', md: 'lg' }}>Frontend</Heading>
                         <Text textStyle={{ smDown: 'sm' }} color={'gray.500'}>{translate("These are the frontend development technologies that I have mastered.")}</Text>
                         <Box display={'flex'} mt={5} mb={{ smDown: 2 }} alignItems={'center'} gap={2}>
                             <Text fontSize={{ smDown: 'x-small', md: 'sm' }} color={'gray.500'}>{translate("Scroll to see more")}</Text>
@@ -225,7 +225,7 @@ const Skill = () => {
 
                 <Box display={{ sm: 'block', md: 'flex' }} gap={4} alignItems={'center'}>
                     <Box w={{ md: '50%' }}>
-                        <Heading textStyle={{ smDown: 'md', md: 'lg' }}>Backend</Heading>
+                        <Heading textStyle={{ smDown: 'md', mdDown: 'lg', md: 'lg' }}>Backend</Heading>
                         <Text textStyle={{ smDown: 'sm' }} color={'gray.500'}>{translate("These are the backend development technologies that I have mastered.")}</Text>
                         <Box display={'flex'} mt={5} mb={{ smDown: 2 }} alignItems={'center'} gap={2}>
                             <Text fontSize={{ smDown: 'x-small', md: 'sm' }} color={'gray.500'}>{translate("Scroll to see more")}</Text>
@@ -263,7 +263,7 @@ const Skill = () => {
 
                 <Box display={{ sm: 'block', md: 'flex' }} gap={4} alignItems={'center'}>
                     <Box w={{ md: '50%' }}>
-                        <Heading textStyle={{ smDown: 'md', md: 'lg' }}>Mobile</Heading>
+                        <Heading textStyle={{ smDown: 'md', mdDown: 'lg', md: 'lg' }}>Mobile</Heading>
                         <Text textStyle={{ smDown: 'sm' }} color={'gray.500'}>{translate("These are the mobile development technologies that I have mastered.")}</Text>
                         <Box display={'flex'} mt={5} mb={{ smDown: 2 }} alignItems={'center'} gap={2}>
                             <Text fontSize={{ smDown: 'x-small', md: 'sm' }} color={'gray.500'}>{translate("Scroll to see more")}</Text>
@@ -301,7 +301,7 @@ const Skill = () => {
 
                 <Box display={{ sm: 'block', md: 'flex' }} gap={4} alignItems={'center'}>
                     <Box w={{ md: '50%' }}>
-                        <Heading textStyle={{ smDown: 'md', md: 'lg' }} size={'lg'}>Database</Heading>
+                        <Heading textStyle={{ smDown: 'md', mdDown: 'lg', md: 'lg' }} size={'lg'}>Database</Heading>
                         <Text textStyle={{ smDown: 'sm' }} color={'gray.500'}>{translate("These are the database technologies that I have mastered.")}</Text>
                         <Box display={'flex'} mt={5} mb={{ smDown: 2 }} alignItems={'center'} gap={2}>
                             <Text fontSize={{ smDown: 'x-small', md: 'sm' }} color={'gray.500'}>{translate("Scroll to see more")}</Text>
@@ -339,7 +339,7 @@ const Skill = () => {
 
                 <Box display={{ sm: 'block', md: 'flex' }} gap={4} alignItems={'center'}>
                     <Box w={{ md: '50%' }}>
-                        <Heading textStyle={{ smDown: 'md', md: 'lg' }} size={'lg'}>{translate("Other")}</Heading>
+                        <Heading textStyle={{ smDown: 'md', mdDown: 'lg', md: 'lg' }} size={'lg'}>{translate("Other")}</Heading>
                         <Text textStyle={{ smDown: 'sm' }} color={'gray.500'}>{translate("These are the other technologies that I have mastered.")}</Text>
                         <Box display={'flex'} mt={5} mb={{ smDown: 2 }} alignItems={'center'} gap={2}>
                             <Text alignSelf={'end'} fontSize={{ smDown: 'x-small', md: 'sm' }} color={'gray.500'}>{translate("Scroll to see more")}</Text>

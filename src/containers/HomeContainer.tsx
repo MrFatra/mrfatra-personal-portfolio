@@ -36,8 +36,8 @@ const HomeContainer = () => {
 
     }, [])
     return (
-        <Container p={{ smDown: 10, md: 20 }} display={'flex'} flexDirection={'column'} gap={20} fluid>
-            <Box position={'fixed'} top={20} right={3} flexDirection={'column'} gap={3} zIndex={100} display={{ smDown: 'none', md: 'flex' }}>
+        <Container p={{ smDown: 10, mdDown: 10, md: 20 }} pt={{ mdDown: 10 }} display={'flex'} flexDirection={'column'} gap={20} fluid>
+            <Box position={'fixed'} top={20} right={3} flexDirection={'column'} gap={3} zIndex={100} display={{ smDown: 'none', mdDown: 'none', md: 'flex' }}>
                 <Tooltip content='Toggle Dark Mode' openDelay={200} closeDelay={200}>
                     <Box asChild bg={colorMode === 'dark' ? 'whiteAlpha.300' : 'blackAlpha.300'} p={4} borderRadius={10} zIndex={100} onClick={() => setColorMode(colorMode === 'dark' ? 'light' : 'dark')}>
                         <ColorModeButton />
