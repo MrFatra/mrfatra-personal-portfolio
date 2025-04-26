@@ -1,7 +1,7 @@
 import { Button } from "@/components/ui/button"
 import { Box, Image, Skeleton, Text } from "@chakra-ui/react"
 import { TypeAnimation } from "react-type-animation"
-import { BiDownload } from "react-icons/bi"
+import { BiLinkExternal } from "react-icons/bi"
 import { useState } from "react"
 import { useTranslation } from "react-i18next"
 
@@ -38,7 +38,7 @@ const Header = () => {
                         border="5px solid"
                         borderColor="gray.300"
                         overflow="hidden"
-                        h={{ sm: '50%', mdDown: 'full',  md: '180px', lg: '200px' }}
+                        h={{ sm: '50%', mdDown: 'full', md: '180px', lg: '200px' }}
                         w={{ sm: 'full', mdDown: 'full', md: '180px', lg: '200px' }}
                         display="flex"
                         justifyContent="center"
@@ -63,7 +63,7 @@ const Header = () => {
             >
                 <Text
                     fontWeight="bold"
-                    fontSize={{ smDown:'2xl', mdDown: '26px', md: '22px', lg: '3xl' }}
+                    fontSize={{ smDown: '2xl', mdDown: '26px', md: '22px', lg: '3xl' }}
                     mb={2}
                 >
                     <TypeAnimation
@@ -91,16 +91,18 @@ const Header = () => {
 
                 <Text textStyle={{ smDown: 'sm', md: 'sm', lg: 'base' }}>{translation("Intro")}</Text>
 
-                <Box
-                    as={Button}
-                    mt={10}
-                    display={{ md: 'flex' }}
-                    alignItems={'center'}
-                    gap={3}
-                >
-                    <Text>Download CV</Text>
-                    <BiDownload />
-                </Box>
+                <a href="https://www.cake.me/s--HknxyGHD0SKDFBx8IuLLHw--/ramadhan-fatra" target="_blank" rel="noreferrer">
+                    <Box
+                        as={Button}
+                        mt={10}
+                        display={{ md: 'flex' }}
+                        alignItems={'center'}
+                        gap={3}
+                    >
+                        <Text>See My CV</Text>
+                        <BiLinkExternal />
+                    </Box>
+                </a>
             </Box>
         </Box>
     )

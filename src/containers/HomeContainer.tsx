@@ -5,11 +5,11 @@ import { About, Certificate, Contact, Header, Project, Skill } from "@/sections"
 import { Box, Container, IconButton, Separator } from "@chakra-ui/react"
 import { useEffect, useState } from "react"
 import { FaArrowUp } from "react-icons/fa6"
-import { MdDownload } from "react-icons/md"
+import { AiOutlineFileText } from "react-icons/ai"
 
 const HomeContainer = () => {
     const { colorMode, setColorMode } = useColorMode()
-    const [showDownloadButton, setShowDownloadButton] = useState(false)
+    const [showCVButton, setShowCVButton] = useState(false)
     const [showScrollUpButton, setShowScrollUpButton] = useState(false)
 
     useEffect(() => {
@@ -20,10 +20,10 @@ const HomeContainer = () => {
                 const about = document.querySelector('#about')
                 const aboutOffset = about!.getBoundingClientRect().top
                 if (currentScrollPos > aboutOffset) {
-                    setShowDownloadButton(true)
+                    setShowCVButton(true)
                 }
                 else {
-                    setShowDownloadButton(false)
+                    setShowCVButton(false)
                 }
                 if (currentScrollPos >= document.documentElement.scrollHeight - window.innerHeight) {
                     setShowScrollUpButton(true)
@@ -61,8 +61,8 @@ const HomeContainer = () => {
                     </Box>
                 </Tooltip>
                 {
-                    showDownloadButton &&
-                    <Tooltip content='Download CV' openDelay={200} closeDelay={200}>
+                    showCVButton &&
+                    <Tooltip content='See My CV' openDelay={200} closeDelay={200}>
                         <Box asChild bg={colorMode === 'dark' ? 'whiteAlpha.300' : 'blackAlpha.300'} p={4} borderRadius={10} zIndex={100}>
                             <IconButton
                                 variant="ghost"
@@ -73,9 +73,9 @@ const HomeContainer = () => {
                                         height: "5",
                                     },
                                 }}
-                            // onClick={() => window.open('/assets/cv.pdf', '_blank')}
+                                onClick={() => window.open('https://www.cake.me/s--HknxyGHD0SKDFBx8IuLLHw--/ramadhan-fatra', '_blank')}
                             >
-                                <MdDownload />
+                                <AiOutlineFileText />
                             </IconButton>
                         </Box>
                     </Tooltip>

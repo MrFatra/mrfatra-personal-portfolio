@@ -14,7 +14,7 @@ import { useTranslation } from "react-i18next"
 import { FaBars, FaXmark } from "react-icons/fa6"
 import LanguageSwitcher from "./LanguageSwitcher"
 import { Tooltip } from "./ui/tooltip"
-import { BiDownload } from "react-icons/bi"
+import { BiLinkExternal } from "react-icons/bi"
 import { Button } from "./ui/button"
 
 const Navbar = () => {
@@ -117,16 +117,18 @@ const Navbar = () => {
               //   <RouterLink to={item.href} key={item.label}>{item.label}</RouterLink>
               // </ChakraLink>
             ))}
-            <Box
-              as={Button}
-              my={5}
-              display={{ md: 'flex' }}
-              alignItems={'center'}
-              gap={3}
-            >
-              <Text>Download CV</Text>
-              <BiDownload />
-            </Box>
+            <a href="https://www.cake.me/s--HknxyGHD0SKDFBx8IuLLHw--/ramadhan-fatra" target="_blank" rel="noreferrer">
+              <Box
+                as={Button}
+                my={5}
+                display={{ md: 'flex' }}
+                alignItems={'center'}
+                gap={3}
+              >
+                <Text>See My CV</Text>
+                <BiLinkExternal />
+              </Box>
+            </a>
           </VStack>
         </Collapsible.Content>
       </Collapsible.Root>
