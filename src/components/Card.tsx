@@ -1,5 +1,5 @@
-import { Badge, Box, Card, HStack, Image, LinkBox, LinkOverlay } from "@chakra-ui/react"
-import { BsArrowRight, BsGithub } from "react-icons/bs"
+import { Badge, Box, Card, HStack, Image } from "@chakra-ui/react"
+// import { BsArrowRight, BsGithub } from "react-icons/bs"
 import { useColorMode } from "./ui/color-mode"
 import { DialogBody, DialogCloseTrigger, DialogContent, DialogRoot, DialogTrigger } from "./ui/dialog"
 import { FaEye } from 'react-icons/fa6'
@@ -11,10 +11,10 @@ type CardProjectProps = {
   image: string
   description: string
   tags: { name: string, color: string }[],
-  github?: string | undefined
+  // github?: string | undefined
 }
 
-const CardProject = ({ title, image, description, tags, github }: CardProjectProps) => {
+const CardProject = ({ title, image, description, tags }: CardProjectProps) => {
   const { colorMode } = useColorMode()
   const cardRef = useRef<HTMLDivElement>(null)
 
@@ -41,7 +41,7 @@ const CardProject = ({ title, image, description, tags, github }: CardProjectPro
 
   return (
     <DialogRoot scrollBehavior={'inside'} placement={'center'} motionPreset={'slide-in-bottom'} size={'lg'} closeOnInteractOutside closeOnEscape>
-      <Card.Root ref={cardRef} maxW="xl" w={{ smDown: '290px', sm: '320px', mdDown: 'sm', md: 'sm' }} h={github ? '500px' : '450px'} overflow="hidden" borderRadius={10} boxShadow={'lg'} border={'1px solid'} borderColor={colorMode === 'light' ? 'gray.400' : 'gray.800'}>
+      <Card.Root ref={cardRef} maxW="xl" w={{ smDown: '290px', sm: '320px', mdDown: 'sm', md: 'sm' }} h={'450px'} overflow="hidden" borderRadius={10} boxShadow={'lg'} border={'1px solid'} borderColor={colorMode === 'light' ? 'gray.400' : 'gray.800'}>
         <Box display={'flex'} justifyContent={'center'} alignItems={'center'} p={3} position="relative">
           <DialogTrigger asChild>
             <Box as="div" position="relative" cursor="pointer">
@@ -81,7 +81,7 @@ const CardProject = ({ title, image, description, tags, github }: CardProjectPro
         </Box>
         <Card.Body gap="2">
           <Card.Title textWrap={'wrap'} textStyle={{ base: '', md: 'lg', lg: 'xl' }}>{title}</Card.Title>
-          <Card.Description flex={1} lineClamp={3} fontSize={'sm'} color={'gray.500'} textOverflow={'ellipsis'} overflow={'hidden'}>
+          <Card.Description lineClamp={3} fontSize={'sm'} color={'gray.500'} textOverflow={'ellipsis'} overflow={'hidden'}>
             {description}
           </Card.Description>
           <HStack mt="4" flexWrap={'wrap'} gap="2">
@@ -92,7 +92,7 @@ const CardProject = ({ title, image, description, tags, github }: CardProjectPro
             }
           </HStack>
         </Card.Body>
-        {
+        {/* {
           github && (
             <Card.Footer gap="2" alignItems={'center'} justifyContent={'end'}>
               <LinkBox as="article" display={'flex'} alignItems={'center'} justifyContent={'center'} gap={2}>
@@ -106,7 +106,7 @@ const CardProject = ({ title, image, description, tags, github }: CardProjectPro
               </LinkBox>
             </Card.Footer>
           )
-        }
+        } */}
       </Card.Root>
       <DialogContent>
         <DialogBody pt="4">
@@ -120,10 +120,25 @@ const CardProject = ({ title, image, description, tags, github }: CardProjectPro
               alt={title}
             />
           </Box>
+          <Box p={3} textAlign={'justify'}>
+            <Card.Root border={'none'} display={'flex'} gap="2" flexDirection={'column'}>
+              <Card.Title textWrap={'wrap'} textStyle={{ base: '', md: 'lg', lg: 'xl' }}>{title}</Card.Title>
+              <Card.Description lineClamp={3} fontSize={'sm'} color={'gray.500'} textOverflow={'ellipsis'} overflow={'hidden'}>
+                {description}
+              </Card.Description>
+              <HStack mt="4" flexWrap={'wrap'} gap="2">
+                {
+                  tags.map(tag => (
+                    <Badge key={tag.name} bg={tag.color} color={'white'}>{tag.name}</Badge>
+                  ))
+                }
+              </HStack>
+            </Card.Root>
+          </Box>
         </DialogBody>
         <DialogCloseTrigger top="0" insetEnd="-10" bg={colorMode === 'dark' ? 'gray.900' : 'whiteAlpha.900'} />
       </DialogContent>
-    </DialogRoot>
+    </DialogRoot >
   )
 }
 

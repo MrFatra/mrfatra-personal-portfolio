@@ -1,0 +1,140 @@
+{
+    "projects": [
+        {
+            "title": "Islam Heritage",
+            "image": "islam-heritage.png",
+            "description": "Web Design Competition Award Winning 2024 1st place.",
+            "tags": [
+                {
+                    "name": "HTML",
+                    "color": "orange.500"
+                },
+                {
+                    "name": "CSS",
+                    "color": "blue.500"
+                }
+            ],
+            "github": "https://github.com/MrFatra/dies_natalis_mrt"
+        },
+        {
+            "title": "E-Learning",
+            "image": "e-learning.png",
+            "description": "E-Learning is an online learning platform that provides course resources for students and educators.",
+            "tags": [
+                {
+                    "name": "Laravel",
+                    "color": "red.500"
+                },
+                {
+                    "name": "ReactJS",
+                    "color": "blue.800"
+                },
+                {
+                    "name": "Tailwindcss",
+                    "color": "blue.500"
+                },
+                {
+                    "name": "MySQL",
+                    "color": "yellow.500"
+                }
+            ],
+            "github": "https://github.com/Alope-Community/forClient_Traveloop"
+        },
+        {
+            "title": "Traveloop",
+            "image": "traveloop.png",
+            "description": "Traveloop is a web-based travel planning application that helps users find and book travel packages, accommodations, and activities.",
+            "tags": [
+                {
+                    "name": "Laravel",
+                    "color": "red.500"
+                },
+                {
+                    "name": "Bootstrap",
+                    "color": "purple.700"
+                },
+                {
+                    "name": "MySQL",
+                    "color": "yellow.500"
+                }
+            ],
+            "github": "https://github.com/Alope-Community/forClient_Traveloop"
+        },
+        {
+            "title": "Fine Search",
+            "image": "finesearch.png",
+            "description": "Simple Semantic Search Engine built with Next JS, Drizzle, Vector Upstash, Neon Tech + Postgres.",
+            "tags": [
+                {
+                    "name": "Next JS",
+                    "color": "black"
+                },
+                {
+                    "name": "Drizzle",
+                    "color": "blue.500"
+                },
+                {
+                    "name": "Vector Upstash",
+                    "color": "yellow.500"
+                },
+                {
+                    "name": "Neon Tech",
+                    "color": "green.500"
+                },
+                {
+                    "name": "Postgres",
+                    "color": "blue.500"
+                }
+            ],
+            "github": "https://github.com/MrFatra/finesearch"
+        },
+        {
+            "title": "PPDB Online",
+            "image": "ppdb.png",
+            "description": "PPDB Online is a web-based application for managing student data, registration, verification, and reporting.",
+            "tags": [
+                {
+                    "name": "Laravel",
+                    "color": "red.500"
+                },
+                {
+                    "name": "Tailwindcss",
+                    "color": "blue.500"
+                },
+                {
+                    "name": "ReactJS",
+                    "color": "blue.800"
+                },
+                {
+                    "name": "MySQL",
+                    "color": "yellow.500"
+                }
+            ],
+            "github": "https://github.com/Alope-Community/forClient_PPDB-online"
+        },
+        {
+            "title": "P2D (Posyandu Peduli Desa",
+            "image": "p2d.png",
+            "description": "P2D is a web-based application for managing data and services related to community health, including maternal and child health, immunization, and nutrition.",
+            "tags": [
+                {
+                    "name": "Laravel",
+                    "color": "red.500"
+                },
+                {
+                    "name": "Tailwindcss",
+                    "color": "blue.500"
+                },
+                {
+                    "name": "ReactJS",
+                    "color": "blue.800"
+                },
+                {
+                    "name": "MySQL",
+                    "color": "yellow.500"
+                }
+            ],
+            "github": "https://github.com/MrFatra/p2d-fe"
+        }
+    ]
+}

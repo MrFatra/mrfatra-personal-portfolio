@@ -4,7 +4,6 @@ import {
   VStack,
   Link as ChakraLink,
   Heading,
-  IconButton,
   Collapsible,
   Text,
   useDisclosure,
@@ -26,9 +25,9 @@ const Navbar = () => {
   const menuItems = [
     { label: translation("Home"), href: "/" },
     { label: translation("About"), href: "#about" },
-    { label: translation("Skills"), href: "#skills" },
-    { label: translation("Projects"), href: "#projects" },
-    { label: translation("Certificates"), href: "#certificates" },
+    { label: translation("Skills"), href: "#skill" },
+    { label: translation("Projects"), href: "#project" },
+    { label: translation("Certificates"), href: "#certificate" },
   ]
 
   return (
@@ -50,19 +49,18 @@ const Navbar = () => {
           <Box display="flex" alignItems="center" gap={4}>
             {/* Menu Toggle (Mobile) */}
             <Collapsible.Trigger onClick={onToggle}>
-              <IconButton
+              <Box
                 display={{ base: "inline-flex", md: "none" }}
-                variant="ghost"
                 aria-label="Toggle Navigation"
                 fontSize="20px"
               >
                 {
                   open ?
-                  <FaXmark />
-                  :
-                  <FaBars />
+                    <FaXmark />
+                    :
+                    <FaBars />
                 }
-              </IconButton>
+              </Box>
             </Collapsible.Trigger>
 
             {/* Logo */}
@@ -95,9 +93,9 @@ const Navbar = () => {
             gap={8}
             display={{ base: "none", md: "flex" }}
           >
-            {menuItems.map((item) => (
-              <ChakraLink asChild>
-                <RouterLink to={item.href} key={item.label}>{item.label}</RouterLink>
+            {menuItems.map((item, index) => (
+              <ChakraLink href={item.href} key={index}>
+                {item.label}
               </ChakraLink>
             ))}
           </HStack>
@@ -111,10 +109,13 @@ const Navbar = () => {
             mt={5}
             display={{ base: "flex", md: "none" }}
           >
-            {menuItems.map((item) => (
-              <ChakraLink asChild>
-                <RouterLink to={item.href} key={item.label}>{item.label}</RouterLink>
+            {menuItems.map((item, index) => (
+              <ChakraLink href={item.href} key={index}>
+                {item.label}
               </ChakraLink>
+              // <ChakraLink asChild key={index}>
+              //   <RouterLink to={item.href} key={item.label}>{item.label}</RouterLink>
+              // </ChakraLink>
             ))}
             <Box
               as={Button}

@@ -10,7 +10,7 @@ const Contact = () => {
     return (
         <Box id="contact" p={10} bg={colorMode === 'dark' ? 'gray.900' : 'gray.200'}>
             <Box textAlign={'center'}>
-                <Heading textStyle={{ base: 'lg', mdDown: 'xl', md: 'xl', lg: '3xl' }} mb={5}>{translate("Find Me Here!")}</Heading>
+                <Heading textStyle={{ base: 'lg', mdDown: 'xl', md: 'xl', lg: '3xl' }} mb={5}>{translate("Get In Touch!")}</Heading>
                 <Box display={'flex'} flexWrap={'wrap'} justifyContent={'center'} gap={3} alignItems={'center'} mb={5}>
                     <Box asChild bg={'blue.500'} p={{ smDown: 2, mdDown: 3, md: 3 }} borderRadius={{ smDown: 8, mdDown: 8, md: 10 }} display={'flex'} gap={2} alignItems={'center'} color={'white'} cursor={'pointer'}>
                         <Link href="https://id.linkedin.com/in/mrfatra" target="_blank" referrerPolicy="no-referrer">

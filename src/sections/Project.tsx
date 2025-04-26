@@ -1,61 +1,10 @@
 import { Card } from "@/components"
 import { Box, Heading, Text } from "@chakra-ui/react"
 import { useTranslation } from "react-i18next"
+import data from '@/data/projects.json'
 
 const Project = () => {
     const { t: translate } = useTranslation()
-
-    const projects = [
-        {
-            title: "Fine Search",
-            image: "finesearch.png",
-            description: translate("Simple Semantic Search Engine built with Next JS, Drizzle, Vector Upstash, Neon Tech + Postgres."),
-            tags: [{
-                name: "Next JS",
-                color: "black"
-            }, {
-                name: "Drizzle",
-                color: "blue.500"
-            }, {
-                name: "Vector Upstash",
-                color: "yellow.500"
-            },
-            {
-                name: "Neon Tech",
-                color: "green.500"
-            },
-            {
-                name: "Postgres",
-                color: "blue.500"
-            }],
-            github: "https://github.com/MrFatra/finesearch"
-        },
-        {
-            title: "Fine Search",
-            image: "finesearch.png",
-            description: translate("Simple Semantic Search Engine built with Next JS, Drizzle, Vector Upstash, Neon Tech + Postgres."),
-            tags: [{
-                name: "Next JS",
-                color: "black"
-            }, {
-                name: "Drizzle",
-                color: "blue.500"
-            }, {
-                name: "Vector Upstash",
-                color: "yellow.500"
-            },
-            {
-                name: "Neon Tech",
-                color: "green.500"
-            },
-            {
-                name: "Postgres",
-                color: "blue.500"
-            }],
-            github: "https://github.com/MrFatra/finesearch"
-        },
-    ]
-
 
     return (
         <Box id="project">
@@ -72,7 +21,7 @@ const Project = () => {
                 display={'flex'}
             >
                 {
-                    projects.map((project, index) => (
+                    data.projects.map((project, index) => (
                         <Box
                             key={index}
                             display="inline-block"
@@ -80,9 +29,9 @@ const Project = () => {
                             <Card
                                 title={project.title}
                                 image={project.image}
-                                description={project.description}
+                                description={translate(project.description)}
                                 tags={project.tags}
-                                github={project.github}
+                            // github={project.github}
                             />
                         </Box>
                     ))
