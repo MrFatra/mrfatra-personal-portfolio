@@ -41,26 +41,6 @@
             "github": "https://github.com/Alope-Community/forClient_Traveloop"
         },
         {
-            "title": "Traveloop",
-            "image": "traveloop.png",
-            "description": "Traveloop is a web-based travel planning application that helps users find and book travel packages, accommodations, and activities.",
-            "tags": [
-                {
-                    "name": "Laravel",
-                    "color": "red.500"
-                },
-                {
-                    "name": "Bootstrap",
-                    "color": "purple.700"
-                },
-                {
-                    "name": "MySQL",
-                    "color": "yellow.500"
-                }
-            ],
-            "github": "https://github.com/Alope-Community/forClient_Traveloop"
-        },
-        {
             "title": "Fine Search",
             "image": "finesearch.png",
             "description": "Simple Semantic Search Engine built with Next JS, Drizzle, Vector Upstash, Neon Tech + Postgres.",
@@ -87,30 +67,6 @@
                 }
             ],
             "github": "https://github.com/MrFatra/finesearch"
-        },
-        {
-            "title": "PPDB Online",
-            "image": "ppdb.png",
-            "description": "PPDB Online is a web-based application for managing student data, registration, verification, and reporting.",
-            "tags": [
-                {
-                    "name": "Laravel",
-                    "color": "red.500"
-                },
-                {
-                    "name": "Tailwindcss",
-                    "color": "blue.500"
-                },
-                {
-                    "name": "ReactJS",
-                    "color": "blue.800"
-                },
-                {
-                    "name": "MySQL",
-                    "color": "yellow.500"
-                }
-            ],
-            "github": "https://github.com/Alope-Community/forClient_PPDB-online"
         },
         {
             "title": "P2D (Posyandu Peduli Desa",
